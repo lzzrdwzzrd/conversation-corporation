@@ -24,6 +24,10 @@ Dict="*uid://cr5sof4k72hw"
 window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/auto_polygon2d_triangulation/plugin.cfg")
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
