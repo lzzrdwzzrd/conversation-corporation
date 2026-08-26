@@ -1,0 +1,217 @@
+[gd_scene format=3 uid="uid://kygar0sbpf3o"]
+
+[ext_resource type="FontFile" uid="uid://dhvmtnlc8oiiy" path="res://fonts/GoogleSansFlex.ttf" id="1_7jktm"]
+[ext_resource type="Texture2D" uid="uid://bh3subjo3oox8" path="res://assets/teal-portrait-test.png" id="1_80nbo"]
+[ext_resource type="Shader" uid="uid://cmhj1spw5tq7p" path="res://shaders/portraits.gdshader" id="1_e2o6t"]
+[ext_resource type="Script" uid="uid://ctmrmkigd737b" path="res://scripts/game.gd" id="1_fc0e3"]
+[ext_resource type="FontFile" uid="uid://uxbxo10p6xe6" path="res://fonts/IntelOneMono.ttf" id="2_feb5d"]
+[ext_resource type="Texture2D" uid="uid://clrem4y8mdb8f" path="res://assets/trader-test.png" id="5_7jktm"]
+
+[sub_resource type="FontVariation" id="FontVariation_7jktm"]
+base_font = ExtResource("1_7jktm")
+variation_opentype = {
+1196572996: 0,
+1380929092: 0,
+1869640570: 18,
+1936486004: 0,
+2003072104: 100,
+2003265652: 500
+}
+
+[sub_resource type="Theme" id="Theme_fc0e3"]
+default_font = SubResource("FontVariation_7jktm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ryrav"]
+shader = ExtResource("1_e2o6t")
+shader_parameter/washout_intensity = 0.0
+shader_parameter/blur_amount = 0.874000041515
+shader_parameter/blockiness = 258.83300991956753
+shader_parameter/color_steps = 10.7690001315275
+shader_parameter/grain_amount = 0.10000000149012
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_51tvd"]
+content_margin_left = 5.0
+content_margin_right = 5.0
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_feb5d"]
+base_font = ExtResource("2_feb5d")
+variation_opentype = {
+2003265652: 400
+}
+
+[sub_resource type="Theme" id="Theme_e2o6t"]
+default_font = SubResource("FontVariation_feb5d")
+default_font_size = 10
+Label/styles/normal = SubResource("StyleBoxFlat_51tvd")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_80nbo"]
+shader = ExtResource("1_e2o6t")
+shader_parameter/washout_intensity = 0.0590000028025
+shader_parameter/blur_amount = 1.86800008873
+shader_parameter/blockiness = 258.83300991956753
+shader_parameter/color_steps = 10.7690001315275
+shader_parameter/grain_amount = 0.030000001425
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fc0e3"]
+bg_color = Color(0.19793722, 0.19793725, 0.19793713, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_51tvd"]
+
+[sub_resource type="Theme" id="Theme_ryrav"]
+default_font_size = 11
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gu8e"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(0.1, 0.1, 0.1, 1)
+
+[node name="Game" type="Control" unique_id=1381626058]
+oversampling_with_scale = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_fc0e3")
+script = ExtResource("1_fc0e3")
+
+[node name="Levels" type="Node" parent="." unique_id=1222017038]
+
+[node name="CharacterPortrait" type="TextureRect" parent="." unique_id=1177734986]
+material = SubResource("ShaderMaterial_ryrav")
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -228.0
+offset_top = 40.0
+offset_right = -32.0
+offset_bottom = 168.0
+grow_horizontal = 0
+theme = SubResource("Theme_e2o6t")
+texture = ExtResource("5_7jktm")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="NameLabel" type="Label" parent="CharacterPortrait" unique_id=20433795]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -11.0
+offset_bottom = 18.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Richard K. Price, 26"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="CameraLabel" type="Label" parent="CharacterPortrait" unique_id=1453522122]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -11.0
+offset_top = -18.0
+grow_horizontal = 0
+text = "User (camera #0)"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="CharacterPortrait2" type="TextureRect" parent="." unique_id=627151181]
+material = SubResource("ShaderMaterial_80nbo")
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -228.0
+offset_top = 232.0
+offset_right = -32.0
+offset_bottom = 360.0
+grow_horizontal = 0
+theme = SubResource("Theme_e2o6t")
+texture = ExtResource("1_80nbo")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="NameLabel" type="Label" parent="CharacterPortrait2" unique_id=181020547]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -11.0
+offset_bottom = 18.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Pieter B. Teal, 152"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="CameraLabel" type="Label" parent="CharacterPortrait2" unique_id=1591505750]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -11.0
+offset_top = -18.0
+grow_horizontal = 0
+text = "Founder & CEO of BurbleAI"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=105231359]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="ChatDrawer" type="PanelContainer" parent="HBoxContainer" unique_id=55446842]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fc0e3")
+
+[node name="MainChatArea" type="PanelContainer" parent="HBoxContainer" unique_id=343520999]
+custom_minimum_size = Vector2(650, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_51tvd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MainChatArea" unique_id=1337024659]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 2
+
+[node name="Buttons" type="HBoxContainer" parent="HBoxContainer/MainChatArea/VBoxContainer" unique_id=690950959]
+layout_mode = 2
+theme = SubResource("Theme_ryrav")
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/MainChatArea/VBoxContainer" unique_id=592466907]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4gu8e")
+
+[node name="TextInput" type="RichTextLabel" parent="HBoxContainer/MainChatArea/VBoxContainer/PanelContainer" unique_id=994780454]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 14
+text = "Lorem Ipsum dolor sit amet"
+fit_content = true
+scroll_active = false
+scroll_following = true
+
+[node name="Control" type="Control" parent="HBoxContainer/MainChatArea/VBoxContainer" unique_id=515433297]
+layout_mode = 2
+
+[node name="QsBufferClearTimer" type="Timer" parent="." unique_id=1341630499]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="QsBufferClearTimer" to="." method="_on_qs_buffer_clear_timeout"]

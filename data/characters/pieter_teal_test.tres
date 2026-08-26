@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="User" format=3 uid="uid://bd4eph1t76g5k"]
+
+[ext_resource type="Texture2D" uid="uid://bh3subjo3oox8" path="res://assets/teal-portrait-test.png" id="1_5r20f"]
+[ext_resource type="Script" uid="uid://cmfsfs2m788jc" path="res://data/user.gd" id="2_exh3o"]
+
+[resource]
+script = ExtResource("2_exh3o")
+portrait = ExtResource("1_5r20f")
+full_name = "Pieter B. Teal"
+camera_label = "Founder & CEO of BurbleAI"
+age = 152
+metadata/_custom_type_script = "uid://cmfsfs2m788jc"
