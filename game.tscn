@@ -4,6 +4,7 @@
 [ext_resource type="Shader" uid="uid://cmhj1spw5tq7p" path="res://shaders/portraits.gdshader" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://ctmrmkigd737b" path="res://scripts/game.gd" id="1_fc0e3"]
 [ext_resource type="FontFile" uid="uid://uxbxo10p6xe6" path="res://fonts/IntelOneMono.ttf" id="2_feb5d"]
+[ext_resource type="PackedScene" uid="uid://dpkmlrwhi3n18" path="res://assets/Back.tscn" id="3_eow3j"]
 [ext_resource type="Texture2D" uid="uid://clrem4y8mdb8f" path="res://assets/trader-test.png" id="5_7jktm"]
 [ext_resource type="PackedScene" uid="uid://brkykgsr08ltf" path="res://data/characters/scenes/pieter_teal.tscn" id="6_ryrav"]
 
@@ -45,8 +46,9 @@ default_font = SubResource("FontVariation_feb5d")
 default_font_size = 10
 Label/styles/normal = SubResource("StyleBoxFlat_51tvd")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fc0e3"]
-bg_color = Color(0.19793722, 0.19793725, 0.19793713, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eow3j"]
+bg_color = Color(0.09411765, 0.101960786, 0.12156863, 1)
+draw_center = false
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_51tvd"]
 
@@ -58,7 +60,7 @@ content_margin_left = 10.0
 content_margin_top = 5.0
 content_margin_right = 10.0
 content_margin_bottom = 5.0
-bg_color = Color(0.1, 0.1, 0.1, 1)
+bg_color = Color(0.09411765, 0.101960786, 0.12156863, 1)
 
 [node name="Game" type="Control" unique_id=1381626058]
 oversampling_with_scale = 2
@@ -71,6 +73,8 @@ grow_vertical = 2
 theme = SubResource("Theme_fc0e3")
 script = ExtResource("1_fc0e3")
 
+[node name="Background" parent="." unique_id=2011888884 instance=ExtResource("3_eow3j")]
+
 [node name="Levels" type="Node" parent="." unique_id=1222017038]
 
 [node name="CharacterPortrait" type="TextureRect" parent="." unique_id=1177734986]
@@ -79,9 +83,9 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -228.0
+offset_left = -215.0
 offset_top = 40.0
-offset_right = -32.0
+offset_right = -19.0
 offset_bottom = 168.0
 grow_horizontal = 0
 theme = SubResource("Theme_e2o6t")
@@ -121,9 +125,9 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -228.0
+offset_left = -215.0
 offset_top = 232.0
-offset_right = -32.0
+offset_right = -19.0
 offset_bottom = 360.0
 grow_horizontal = 0
 
@@ -164,9 +168,9 @@ grow_vertical = 2
 theme_override_constants/separation = 12
 
 [node name="ChatDrawer" type="PanelContainer" parent="HBoxContainer" unique_id=55446842]
-custom_minimum_size = Vector2(256, 0)
+custom_minimum_size = Vector2(234.035, 0)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_fc0e3")
+theme_override_styles/panel = SubResource("StyleBoxFlat_eow3j")
 
 [node name="MainChatArea" type="PanelContainer" parent="HBoxContainer" unique_id=343520999]
 custom_minimum_size = Vector2(650, 0)
@@ -195,6 +199,7 @@ scroll_active = false
 scroll_following = true
 
 [node name="Control" type="Control" parent="HBoxContainer/MainChatArea/VBoxContainer" unique_id=515433297]
+custom_minimum_size = Vector2(0, 41.515)
 layout_mode = 2
 
 [node name="QsBufferClearTimer" type="Timer" parent="." unique_id=1341630499]

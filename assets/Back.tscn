@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dpkmlrwhi3n18"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j5wjh"]
+bg_color = Color(0.16862746, 0.1764706, 0.21176471, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vef74"]
+bg_color = Color(0.12156863, 0.12941177, 0.15686275, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ej0lp"]
+bg_color = Color(0.09411765, 0.101960786, 0.12156863, 1)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_shvi5"]
+
+[node name="Background" type="Node2D" unique_id=2011888884]
+
+[node name="Panel4" type="Panel" parent="." unique_id=1592416595]
+offset_left = 232.0
+offset_top = 36.0
+offset_right = 922.0
+offset_bottom = 534.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_j5wjh")
+
+[node name="Panel6" type="Panel" parent="." unique_id=1990758138]
+offset_left = 230.0
+offset_top = 510.0
+offset_right = 920.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vef74")
+
+[node name="Panel5" type="Panel" parent="." unique_id=1012632846]
+offset_left = 232.0
+offset_right = 921.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vef74")
+
+[node name="Panel2" type="Panel" parent="." unique_id=205566749]
+offset_right = 235.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ej0lp")
+
+[node name="Panel3" type="Panel" parent="." unique_id=47791438]
+material = SubResource("CanvasItemMaterial_shvi5")
+offset_left = 917.0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ej0lp")
+
+[node name="Panel7" type="Panel" parent="." unique_id=988018081]
+offset_left = 5.0
+offset_top = 39.0
+offset_right = 228.0
+offset_bottom = 41.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_j5wjh")
