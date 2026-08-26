@@ -25,3 +25,6 @@ func set_behavior(behavior: Behavior) -> void:
 			pass
 		Behavior.ANGRY:
 			pass
+
+func _ready() -> void:
+	set_behavior(Behavior.NEUTRAL)
