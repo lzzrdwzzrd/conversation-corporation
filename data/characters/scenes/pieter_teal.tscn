@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://brkykgsr08ltf"]
+
+[ext_resource type="PackedScene" uid="uid://cosiljv6epx1" path="res://data/character_portrait.tscn" id="1_ovbqp"]
+[ext_resource type="Texture2D" uid="uid://bh3subjo3oox8" path="res://assets/teal-portrait-test.png" id="2_h7tx6"]
+[ext_resource type="Script" uid="uid://v2kfj3j4wufo" path="res://data/characters/scripts/pieter_teal.gd" id="2_rnulr"]
+
+[node name="PieterTeal" unique_id=1095612352 instance=ExtResource("1_ovbqp")]
+script = ExtResource("2_rnulr")
+
+[node name="Background" type="TextureRect" parent="." index="0" unique_id=32766126]
+use_parent_material = true
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_h7tx6")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="CharacterStuffHere" type="Polygon2D" parent="Background" index="0" unique_id=1985130580]
+use_parent_material = true
+position = Vector2(-63, 61)
+polygon = PackedVector2Array(75, 60, 105, 62, 106, 46, 78, 42)
+
+[node name="NOTE_MakeSureToEnable" type="Control" parent="." index="1" unique_id=1890269598]
+use_parent_material = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="use_parent_material" type="Control" parent="." index="2" unique_id=1874309090]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="OnEverything" type="Control" parent="." index="3" unique_id=612507686]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

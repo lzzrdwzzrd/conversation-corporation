@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://kygar0sbpf3o"]
 
 [ext_resource type="FontFile" uid="uid://dhvmtnlc8oiiy" path="res://fonts/GoogleSansFlex.ttf" id="1_7jktm"]
-[ext_resource type="Texture2D" uid="uid://bh3subjo3oox8" path="res://assets/teal-portrait-test.png" id="1_80nbo"]
 [ext_resource type="Shader" uid="uid://cmhj1spw5tq7p" path="res://shaders/portraits.gdshader" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://ctmrmkigd737b" path="res://scripts/game.gd" id="1_fc0e3"]
 [ext_resource type="FontFile" uid="uid://uxbxo10p6xe6" path="res://fonts/IntelOneMono.ttf" id="2_feb5d"]
 [ext_resource type="Texture2D" uid="uid://clrem4y8mdb8f" path="res://assets/trader-test.png" id="5_7jktm"]
+[ext_resource type="PackedScene" uid="uid://brkykgsr08ltf" path="res://data/characters/scenes/pieter_teal.tscn" id="6_ryrav"]
 
 [sub_resource type="FontVariation" id="FontVariation_7jktm"]
 base_font = ExtResource("1_7jktm")
@@ -44,14 +44,6 @@ variation_opentype = {
 default_font = SubResource("FontVariation_feb5d")
 default_font_size = 10
 Label/styles/normal = SubResource("StyleBoxFlat_51tvd")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_80nbo"]
-shader = ExtResource("1_e2o6t")
-shader_parameter/washout_intensity = 0.0590000028025
-shader_parameter/blur_amount = 1.86800008873
-shader_parameter/blockiness = 258.83300991956753
-shader_parameter/color_steps = 10.7690001315275
-shader_parameter/grain_amount = 0.030000001425
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fc0e3"]
 bg_color = Color(0.19793722, 0.19793725, 0.19793713, 1)
@@ -124,8 +116,7 @@ text = "User (camera #0)"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="CharacterPortrait2" type="TextureRect" parent="." unique_id=627151181]
-material = SubResource("ShaderMaterial_80nbo")
+[node name="PieterTeal" parent="." unique_id=1095612352 instance=ExtResource("6_ryrav")]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -135,33 +126,29 @@ offset_top = 232.0
 offset_right = -32.0
 offset_bottom = 360.0
 grow_horizontal = 0
-theme = SubResource("Theme_e2o6t")
-texture = ExtResource("1_80nbo")
-expand_mode = 3
-stretch_mode = 6
 
-[node name="NameLabel" type="Label" parent="CharacterPortrait2" unique_id=181020547]
+[node name="NameLabel" type="Label" parent="PieterTeal" unique_id=181020547]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -11.0
-offset_bottom = 18.0
+offset_left = -127.0
+offset_bottom = 21.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Pieter B. Teal, 152"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="CameraLabel" type="Label" parent="CharacterPortrait2" unique_id=1591505750]
+[node name="CameraLabel" type="Label" parent="PieterTeal" unique_id=1591505750]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -11.0
-offset_top = -18.0
+offset_left = -164.0
+offset_top = -20.0
 grow_horizontal = 0
 text = "Founder & CEO of BurbleAI"
 horizontal_alignment = 2
