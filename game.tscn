@@ -130,7 +130,6 @@ offset_top = 232.0
 offset_right = -19.0
 offset_bottom = 360.0
 grow_horizontal = 0
-scale = Vector2(1.0015416, 1.0015416)
 
 [node name="NameLabel" type="Label" parent="PieterTeal" unique_id=181020547]
 layout_mode = 1

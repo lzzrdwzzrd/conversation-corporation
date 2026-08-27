@@ -7,7 +7,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gnd3w"]
 shader = ExtResource("2_2n2hs")
 shader_parameter/washout_intensity = 0.0590000028025
-shader_parameter/blur_amount = 1.86800008873
+shader_parameter/blur_amount = 0.10000000475
 shader_parameter/blockiness = 258.83300991956753
 shader_parameter/color_steps = 10.7690001315275
 shader_parameter/grain_amount = 0.030000001425
@@ -38,3 +38,17 @@ offset_right = 196.0
 offset_bottom = 128.0
 theme = SubResource("Theme_wepmd")
 script = ExtResource("1_epnbb")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=68375400]
+material = SubResource("ShaderMaterial_gnd3w")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=424813258]
+disable_3d = true
+size = Vector2i(196, 128)

@@ -10,7 +10,7 @@ float rand(vec2 co) {
     return fract(sin(dot(co.xy, vec2(12.9898, 78.233))) * 43758.5453);
 }
 
-float chaotic_drift(float base_value, float range, float seed, vec2 block_region) {
+float entropy(float base_value, float range, float seed, vec2 block_region) {
     float slow = floor(TIME / 3.5 + seed * 1.3);
     float mid = floor(TIME / 0.6 + seed * 2.7);
     float fast = floor(TIME / 0.15 + seed * 0.9);
@@ -29,9 +29,9 @@ float chaotic_drift(float base_value, float range, float seed, vec2 block_region
 void fragment() {
     vec2 region = floor(UV * 6.0) / 6.0;
 
-    float live_blur = clamp(chaotic_drift(blur_amount, blur_amount * 1.4, 0.0, region), 0.0, 8.0);
-    float live_blockiness = clamp(chaotic_drift(blockiness, blockiness * 0.6, 5.31, region), 30.0, 400.0);
-    float live_steps = clamp(chaotic_drift(color_steps, color_steps * 0.7, 11.7, region), 4.0, 48.0);
+    float live_blur = clamp(entropy(blur_amount, blur_amount * 1.4, 0.0, region), 0.0, 8.0);
+    float live_blockiness = clamp(entropy(blockiness, blockiness * 0.6, 5.31, region), 30.0, 400.0);
+    float live_steps = clamp(entropy(color_steps, color_steps * 0.7, 11.7, region), 4.0, 48.0);
 
     vec2 block_uv = floor(UV * live_blockiness) / live_blockiness;
     vec2 texel_size = vec2(1.0) / vec2(textureSize(TEXTURE, 0));
