@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://ctmrmkigd737b" path="res://scripts/game.gd" id="1_fc0e3"]
 [ext_resource type="FontFile" uid="uid://uxbxo10p6xe6" path="res://fonts/IntelOneMono.ttf" id="2_feb5d"]
 [ext_resource type="PackedScene" uid="uid://dpkmlrwhi3n18" path="res://assets/Back.tscn" id="3_eow3j"]
+[ext_resource type="PackedScene" uid="uid://2tvo7037aw3o" path="res://data/levels/level0-test.tscn" id="4_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://clrem4y8mdb8f" path="res://assets/trader-test.png" id="5_7jktm"]
 [ext_resource type="PackedScene" uid="uid://brkykgsr08ltf" path="res://data/characters/scenes/pieter_teal.tscn" id="6_ryrav"]
 
@@ -76,6 +77,8 @@ script = ExtResource("1_fc0e3")
 [node name="Background" parent="." unique_id=2011888884 instance=ExtResource("3_eow3j")]
 
 [node name="Levels" type="Node" parent="." unique_id=1222017038]
+
+[node name="Level0" parent="Levels" unique_id=497558949 instance=ExtResource("4_j5wjh")]
 
 [node name="CharacterPortrait" type="TextureRect" parent="." unique_id=1177734986]
 material = SubResource("ShaderMaterial_ryrav")

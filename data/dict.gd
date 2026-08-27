@@ -38,8 +38,8 @@ var corpus : Array[Dictionary] = [
 
 	{ word = " Pieter", pos = "noun", tags = ["bias: Teal"], flags = {} },
 	{ word = " Teal", pos = "noun", tags = [], flags = {} },
-	{ word = " BlurbleAI", pos = "noun", tags = ["corp"], flags = {} },
-	{ word = " Blurble", pos = "noun", tags = ["corp"], flags = {} },
+	{ word = " BurbleAI", pos = "noun", tags = ["corp"], flags = {} },
+	{ word = " Burble", pos = "noun", tags = ["corp"], flags = {} },
 	{ word = " data center", pos = "noun", tags = ["tech"], flags = {} },
 	{ word = " cloud", pos = "noun", tags = ["tech"], flags = {} },
 	{ word = " innovation", pos = "noun", tags = ["corp"], flags = {} },
