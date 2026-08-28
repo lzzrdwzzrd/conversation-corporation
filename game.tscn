@@ -185,7 +185,7 @@ layout_mode = 2
 theme_override_constants/separation = 4
 alignment = 2
 
-[node name="Buttons" type="HBoxContainer" parent="HBoxContainer/MainChatArea/VBoxContainer" unique_id=690950959]
+[node name="Buttons" type="HFlowContainer" parent="HBoxContainer/MainChatArea/VBoxContainer" unique_id=822439315]
 layout_mode = 2
 theme = SubResource("Theme_ryrav")
 
@@ -196,12 +196,20 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_4gu8e")
 [node name="TextInput" type="RichTextLabel" parent="HBoxContainer/MainChatArea/VBoxContainer/PanelContainer" unique_id=994780454]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
 text = "Lorem Ipsum dolor sit amet"
 fit_content = true
 scroll_active = false
 scroll_following = true
+meta_underlined = false
+
+[node name="Label" type="Label" parent="HBoxContainer/MainChatArea/VBoxContainer" unique_id=1673247712]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "DEBUG"
 
 [node name="Control" type="Control" parent="HBoxContainer/MainChatArea/VBoxContainer" unique_id=515433297]
+visible = false
 custom_minimum_size = Vector2(0, 41.515)
 layout_mode = 2
 

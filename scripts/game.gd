@@ -1,12 +1,15 @@
 extends Control
 
+@export var locked_color : Color = Color(0.5, 0.5, 0.5)
+
 @onready var text_input: RichTextLabel = $HBoxContainer/MainChatArea/VBoxContainer/PanelContainer/TextInput
-@onready var option_buttons: HBoxContainer = $HBoxContainer/MainChatArea/VBoxContainer/Buttons
+@onready var option_buttons: HFlowContainer = $HBoxContainer/MainChatArea/VBoxContainer/Buttons
 @onready var qs_buffer_clear_timer: Timer = $QsBufferClearTimer
 
 var current_message : Array[Dictionary] = [
 	{ word = "", pos = "start", tags = [], flags = {} }
 ]
+var context_start := 1
 
 var current_options : Array[Dictionary] = []
 var quick_select_buffer : String
@@ -26,7 +29,11 @@ func _render_message(tokens: Array[Dictionary]) -> void:
 	var text := ""
 	var should_capitalize := true
 
-	for token in tokens:
+	if tokens.size() - 1 > backspaces_available:
+		text += "[color=#%s]" % locked_color.to_html(false)
+
+	for i in range(tokens.size()):
+		var token := tokens[i]
 		var word : String = token.word
 		if token.pos in ["start", "end"]: continue
 
@@ -37,28 +44,39 @@ func _render_message(tokens: Array[Dictionary]) -> void:
 
 		text += word
 
+		if i == tokens.size() - backspaces_available - 1:
+			text += "[/color]"
+
 	text = text.strip_edges()
 	text_input.text = text
 
 func _generate_options() -> void:
 	current_options.clear()
-	var last_token : Dictionary = current_message[-1]
-	var next_pos : Array = tp_table.get("w: " + last_token.word, tp_table.get(last_token.pos, []))
-	var recently_used : Array = current_message.slice(-3, current_message.size()).map(func(token): return token.word)
 
-	var biases : Dictionary[String, int] = {}
-	for tag in current_message[-1].tags:
-		if tag.begins_with("bias: "):
-			biases[tag.substr(6)] = biases.get(tag.substr(6), 0) + 1
+	var viable_templates := _get_viable_templates()
+	var next_positions: Array[String] = []
 
-	# todo level-specific terminology here
+	for template in viable_templates:
+		var index := current_message.size() - context_start
 
-	var eligible : Array[Dictionary] = Dict.corpus.filter(func(token: Dictionary) -> bool:
-		if !(token.pos in next_pos):
+		if index < template.size():
+			var pos: String = template[index]
+			if pos not in next_positions:
+				next_positions.append(pos)
+
+	$HBoxContainer/MainChatArea/VBoxContainer/Label.text = "DEBUG: %s viable templates, nextpos %s" % [viable_templates.size(), "/".join(next_positions)]
+
+	var recently_used: Array = current_message.slice(-3, current_message.size()).map(
+		func(token): return token.word
+	)
+
+	var eligible: Array[Dictionary] = Dict.corpus.filter(func(token: Dictionary) -> bool:
+		if token.pos not in next_positions:
 			return false
 
-		if current_message.size() > 1 and token.has("is_eligible") and not token["is_eligible"].call(current_message):
-			return false
+		if current_message.size() > 1 and token.has("is_eligible"):
+			if not token["is_eligible"].call(current_message):
+				return false
 
 		if token.word in recently_used:
 			return false
@@ -66,12 +84,67 @@ func _generate_options() -> void:
 		return true
 	)
 
-	eligible.shuffle() # todo better sampling that takes biases into account
+	eligible.shuffle()
 
 	for i in range(min(8, eligible.size())):
 		current_options.append(eligible[i])
 
 	_set_option_buttons(current_options)
+
+func _update_context_start() -> void:
+	context_start = 1
+	for i in range(current_message.size() - 1, 0, -1):
+		if current_message[i].pos in ["period", "jargon_sentence"]:
+			context_start = i + 1
+
+		break
+
+func _expand_template(template: Array, index := 0, result: Array = [], current: Array = []) -> Array:
+	if index >= template.size():
+		result.append(current.duplicate())
+		return result
+
+	var element: String = template[index]
+
+	if element.ends_with("?"):
+		_expand_template(template, index + 1, result, current)
+
+	current.append(element.trim_suffix("?"))
+	_expand_template(template, index + 1, result, current)
+	current.pop_back()
+
+	return result
+
+func _is_template_prefix(template: Array, message: Array[Dictionary]) -> bool:
+	var sentence_length := message.size() - context_start
+
+	if sentence_length - 1 > template.size():
+		return false
+
+	for i in range(sentence_length):
+		if message[context_start + i].pos != template[i]:
+			return false
+
+	return true
+
+func _get_viable_templates() -> Array:
+	var templates: Array = []
+
+	for template in Dict.sentence_structures:
+		var variants := _expand_template(template)
+
+		for variant in variants:
+			if current_message[-1].pos == variant[-1]:
+				templates = Dict.sentence_structures
+				break
+
+			if _is_template_prefix(variant, current_message):
+				templates.append(variant)
+
+	if templates.is_empty():
+		templates = Dict.sentence_structures
+
+	return templates
 
 func _on_option_selected(index: int) -> void:
 	if index < 0 or index >= current_options.size():
@@ -80,6 +153,9 @@ func _on_option_selected(index: int) -> void:
 	var selected_token : Dictionary = current_options[index]
 	current_message.append(selected_token)
 	backspaces_available = min(3, backspaces_available + 1)
+
+	if selected_token.pos in ["period", "jargon_sentence"]:
+		_update_context_start()
 
 	_render_message(current_message)
 	_generate_options()
@@ -119,6 +195,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		if char_ == "Backspace" and backspaces_available > 0 and current_message.size() > 1:
 			current_message.pop_back()
 			backspaces_available -= 1
+
+			_update_context_start()
 			_render_message(current_message)
 			_generate_options()
 			return

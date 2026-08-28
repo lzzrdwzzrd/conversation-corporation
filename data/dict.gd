@@ -12,9 +12,16 @@ var corpus : Array[Dictionary] = [
 		return history[-1].word[history[-1].word.length() - 1] != "—" },
 
 	{ word = " As an AI language model,", pos = "jargon", tags = [], flags = {} },
-	{ word = " Absolutely!", pos = "jargon", tags = [], flags = {} },
+	{ word = " Absolutely!", pos = "jargon_sentence", tags = [], flags = {} },
 	{ word = " Sure,", pos = "jargon", tags = [], flags = {} },
-	{ word = " Certainly!", pos = "jargon", tags = [], flags = {} },
+	{ word = " Certainly!", pos = "jargon_sentence", tags = [], flags = {} },
+	{ word = " Great question!", pos = "jargon_sentence", tags = [], flags = {} },
+	{ word = " I understand your concern.", pos = "jargon_sentence", tags = [], flags = {} },
+	{ word = " Rest assured,", pos = "jargon", tags = ["corp"], flags = {} },
+	{ word = " At BurbleAI,", pos = "jargon", tags = ["corp"], flags = {} },
+	{ word = " According to our data,", pos = "jargon", tags = ["corp"], flags = {} },
+	{ word = " It is worth noting that", pos = "jargon", tags = [], flags = {} },
+	{ word = " Our engineers have confirmed", pos = "jargon", tags = ["corp"], flags = {} },
 
 	{ word = " the", pos = "det", tags = [], flags = {} },
 	{ word = " a", pos = "det", tags = [], flags = {} },
@@ -148,19 +155,24 @@ var corpus : Array[Dictionary] = [
 	{ word = " affordable", pos = "adj", tags = ["upsell"], flags = {} },
 	{ word = " innovative", pos = "adj", tags = ["corp"], flags = {} },
 
-	{ word = " Great question!", pos = "jargon", tags = [], flags = {} },
-	{ word = " I understand your concern.", pos = "jargon", tags = [], flags = {} },
-	{ word = " Rest assured,", pos = "jargon", tags = ["corp"], flags = {} },
-	{ word = " At BurbleAI,", pos = "jargon", tags = ["corp"], flags = {} },
-	{ word = " According to our data,", pos = "jargon", tags = ["corp"], flags = {} },
-	{ word = " It is worth noting that", pos = "jargon", tags = [], flags = {} },
-	{ word = " Our engineers have confirmed", pos = "jargon", tags = ["corp"], flags = {} },
-
 	{ word = " that", pos = "conj_sub", tags = [], flags = {} },
 	{ word = " there", pos = "pronoun", tags = [], flags = {} },
 	{ word = " here", pos = "adv", tags = [], flags = {} },
 	{ word = " no", pos = "det", tags = [], flags = {} },
 	{ word = " simply", pos = "adv", tags = [], flags = {} },
+]
+
+
+var sentence_structures: Array[Array] = [
+	["jargon_sentence"],
+	["jargon", "pronoun", "aux", "adv?", "verb_base", "det", "adj?", "noun", "period"],
+	["jargon", "pronoun", "aux", "adv?", "verb_base", "det", "noun", "prep", "det?", "adj?", "noun", "period"],
+	["pronoun", "aux", "adv?", "verb_base", "det", "adj?", "noun", "period"],
+	["pronoun", "aux", "adv?", "adj", "period"],
+	["jargon", "det", "noun", "aux", "adv?", "adj", "period"],
+	["jargon", "det", "noun", "aux", "adv?", "verb_base", "det", "adj?", "noun", "period"],
+	["pronoun", "verb_s", "adv?", "adj", "period"],
+	["pronoun", "verb_s", "adv?", "det", "adj?", "noun", "period"],
 ]
 
 
