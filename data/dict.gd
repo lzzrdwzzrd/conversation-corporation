@@ -592,7 +592,7 @@ var sentence_structures: Array[Array] = [
 	["there", "be", "det", "noun", "prep", "det", "noun", "period"],
 
 	["pronoun", "be", "adj", "conj_coord", "pronoun", "be", "adj", "period"],
-	["pronoun", "", "verb_base", "det", "noun", "conj_coord", "det", "noun", "verb_s", "period"],
+	["pronoun", "verb_base", "det", "noun", "conj_coord", "det", "noun", "verb_s", "period"],
 	["det", "noun", "be", "adj", "conj_coord", "det", "noun", "be", "adj", "period"],
 	["det", "noun", "verb_s", "det", "noun", "conj_coord", "det", "noun", "verb_s", "period"],
 
