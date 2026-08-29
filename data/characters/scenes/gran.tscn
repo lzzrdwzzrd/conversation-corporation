@@ -42,8 +42,8 @@ expand_mode = 3
 stretch_mode = 6
 
 [node name="Gran" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background" index="0" unique_id=1503015403]
-position = Vector2(99.19699, 29.888346)
-scale = Vector2(0.15895402, 0.15895402)
+position = Vector2(155.19699, -10.111659)
+scale = Vector2(0.26732847, 0.26732847)
 texture = ExtResource("4_y4jxb")
 
 [node name="EyebrowRight" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Gran" index="0" unique_id=722849891]

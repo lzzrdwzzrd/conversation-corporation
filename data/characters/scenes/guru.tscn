@@ -47,8 +47,8 @@ texture = ExtResource("3_4822n")
 expand_mode = 1
 
 [node name="Guru" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background" index="0" unique_id=1503015403]
-position = Vector2(99.86102, 51.931362)
-scale = Vector2(0.38862145, 0.38862157)
+position = Vector2(99.86103, 75.93135)
+scale = Vector2(0.592393, 0.59239316)
 texture = ExtResource("4_1smqt")
 
 [node name="EyebrowRight" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Guru" index="0" unique_id=722849891]

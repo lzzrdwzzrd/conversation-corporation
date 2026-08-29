@@ -42,8 +42,8 @@ expand_mode = 3
 stretch_mode = 6
 
 [node name="Gambler" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background" index="0" unique_id=1503015403]
-position = Vector2(99.86102, 51.931362)
-scale = Vector2(0.26973918, 0.26973927)
+position = Vector2(99.86103, 51.93136)
+scale = Vector2(0.26607746, 0.2660776)
 texture = ExtResource("4_ivovr")
 
 [node name="EyebrowRight" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Gambler" index="0" unique_id=722849891]
