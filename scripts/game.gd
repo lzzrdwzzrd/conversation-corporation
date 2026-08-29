@@ -5,12 +5,16 @@ extends Control
 @onready var text_input: RichTextLabel = $HBoxContainer/MainChatArea/VBoxContainer/PanelContainer/TextInput
 @onready var option_buttons: HFlowContainer = $HBoxContainer/MainChatArea/VBoxContainer/Buttons
 @onready var qs_buffer_clear_timer: Timer = $QsBufferClearTimer
+@onready var pending_chats: VBoxContainer = $HBoxContainer/ChatDrawer/Levels/AwaitingResponse # if !level.get_child(-1).is_from_player
+@onready var idle_chats: VBoxContainer = $HBoxContainer/ChatDrawer/Levels/Idle
+@onready var button_template: Button = $HBoxContainer/ChatDrawer/Levels/ButtonTemplate
+@onready var levels: Node = $Levels
 
 var current_message : Array[Dictionary] = [
 	{ word = "", pos = "start", tags = [], flags = {} }
 ]
 var context_start := 1
-
+var active_level : Node
 var current_options : Array[Dictionary] = []
 var quick_select_buffer : String
 var backspaces_available := 3
