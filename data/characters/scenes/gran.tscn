@@ -16,6 +16,68 @@ shader_parameter/color_steps = 8.0
 shader_parameter/grain_amount = 0.12
 shader_parameter/frame_rate = 5.0
 
+[sub_resource type="Animation" id="Animation_m1vyt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EyeRight2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [15]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EyeRight:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [14]
+}
+
+[sub_resource type="Animation" id="Animation_f4m4k"]
+resource_name = "loop"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EyeRight2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.7333333, 2.15, 5.1666665, 5.666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [15, 7, 15, 7, 15]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EyeRight:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.7, 2.1333334, 5.16, 5.633333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [14, 6, 14, 6, 14]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y4jxb"]
+_data = {
+&"RESET": SubResource("Animation_m1vyt"),
+&"loop": SubResource("Animation_f4m4k")
+}
+
 [node name="Gran" unique_id=1095612352 instance=ExtResource("1_l0qdg")]
 script = ExtResource("2_m1vyt")
 
@@ -84,3 +146,7 @@ texture = ExtResource("5_ds75a")
 hframes = 2
 vframes = 4
 frame = 6
+
+[node name="BlinkCycle" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/Background/Gran" index="5" unique_id=1051118301]
+libraries/ = SubResource("AnimationLibrary_y4jxb")
+autoplay = &"loop"
