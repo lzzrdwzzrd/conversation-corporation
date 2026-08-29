@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dpkmlrwhi3n18"]
 
+[ext_resource type="FontFile" uid="uid://dhvmtnlc8oiiy" path="res://fonts/GoogleSansFlex.ttf" id="1_shvi5"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j5wjh"]
 bg_color = Color(0.16862746, 0.1764706, 0.21176471, 1)
 corner_radius_top_left = 1
@@ -24,14 +26,33 @@ line_spacing = -6.0
 font_size = 15
 font_color = Color(0.35906908, 0.35906908, 0.35906908, 1)
 
+[sub_resource type="FontVariation" id="FontVariation_shvi5"]
+base_font = ExtResource("1_shvi5")
+variation_opentype = {
+1196572996: 0,
+1380929092: 0,
+1869640570: 18,
+1936486004: 0,
+2003072104: 85,
+2003265652: 400
+}
+
 [sub_resource type="LabelSettings" id="LabelSettings_yf5fn"]
 font_size = 11
 font_color = Color(0.25186795, 0.2650907, 0.3112816, 1)
 
-[sub_resource type="SystemFont" id="SystemFont_shvi5"]
+[sub_resource type="FontVariation" id="FontVariation_axu3h"]
+base_font = ExtResource("1_shvi5")
+variation_opentype = {
+1196572996: 0,
+1380929092: 0,
+1869640570: 36,
+1936486004: 0,
+2003072104: 100,
+2003265652: 500
+}
 
 [sub_resource type="LabelSettings" id="LabelSettings_axu3h"]
-font = SubResource("SystemFont_shvi5")
 font_size = 21
 
 [node name="Background" type="Node2D" unique_id=2011888884]
@@ -76,6 +97,7 @@ offset_bottom = 41.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_j5wjh")
 
 [node name="Label3" type="Label" parent="." unique_id=456771774]
+visible = false
 offset_left = 953.99994
 offset_top = 588.00006
 offset_right = 1022.0
@@ -96,17 +118,19 @@ rporation"
 label_settings = SubResource("LabelSettings_g4v7s")
 
 [node name="Label4" type="Label" parent="." unique_id=2014921810]
-offset_left = 145.0
-offset_top = 11.0
-offset_right = 258.0
-offset_bottom = 38.0
+offset_left = 156.0
+offset_top = 14.0
+offset_right = 220.0
+offset_bottom = 29.0
+theme_override_fonts/font = SubResource("FontVariation_shvi5")
 text = "Internal portal"
 label_settings = SubResource("LabelSettings_yf5fn")
 
 [node name="Label" type="Label" parent="." unique_id=1749560465]
-offset_left = 10.0
-offset_top = 4.0
-offset_right = 97.0
-offset_bottom = 34.0
-text = "BurbleAi"
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 95.0
+offset_bottom = 35.0
+theme_override_fonts/font = SubResource("FontVariation_axu3h")
+text = "BurbleAI"
 label_settings = SubResource("LabelSettings_axu3h")

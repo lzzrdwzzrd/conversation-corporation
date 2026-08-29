@@ -13,11 +13,9 @@ var context_start := 1
 
 var current_options : Array[Dictionary] = []
 var quick_select_buffer : String
-var tp_table : Dictionary
 var backspaces_available := 3
 
 func _ready() -> void:
-	tp_table = Dict.load_transpositions()
 	_generate_options()
 	_render_message(current_message)
 
@@ -48,7 +46,7 @@ func _render_message(tokens: Array[Dictionary]) -> void:
 			text += "[/color]"
 
 	text = text.strip_edges()
-	text_input.text = text
+	text_input.text = text if text else "[color=#808080]Reply as BurbleAI...[/color]"
 
 func _generate_options() -> void:
 	current_options.clear()
@@ -96,8 +94,7 @@ func _update_context_start() -> void:
 	for i in range(current_message.size() - 1, 0, -1):
 		if current_message[i].pos in ["period", "jargon_sentence"]:
 			context_start = i + 1
-
-		break
+			break
 
 func _expand_template(template: Array, index := 0, result: Array = [], current: Array = []) -> Array:
 	if index >= template.size():
@@ -109,9 +106,17 @@ func _expand_template(template: Array, index := 0, result: Array = [], current: 
 	if element.ends_with("?"):
 		_expand_template(template, index + 1, result, current)
 
-	current.append(element.trim_suffix("?"))
-	_expand_template(template, index + 1, result, current)
-	current.pop_back()
+	element = element.trim_suffix("?")
+
+	if element.contains("|"):
+		for sub_element in element.split("|"):
+			current.append(sub_element)
+			_expand_template(template, index + 1, result, current)
+			current.pop_back()
+	else:
+		current.append(element)
+		_expand_template(template, index + 1, result, current)
+		current.pop_back()
 
 	return result
 
@@ -135,16 +140,12 @@ func _get_viable_templates() -> Array:
 
 		for variant in variants:
 			if current_message[-1].pos == variant[-1]:
-				templates = Dict.sentence_structures
-				break
+				return Dict.sentence_structures
 
 			if _is_template_prefix(variant, current_message):
 				templates.append(variant)
 
-	if templates.is_empty():
-		templates = Dict.sentence_structures
-
-	return templates
+	return templates if not templates.is_empty() else Dict.sentence_structures
 
 func _on_option_selected(index: int) -> void:
 	if index < 0 or index >= current_options.size():

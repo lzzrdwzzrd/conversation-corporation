@@ -197,7 +197,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_4gu8e")
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 14
 bbcode_enabled = true
-text = "Lorem Ipsum dolor sit amet"
+text = "[color=#808080]Reply as BurbleAI...[/color]"
 fit_content = true
 scroll_active = false
 scroll_following = true
