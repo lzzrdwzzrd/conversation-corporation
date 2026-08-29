@@ -48,8 +48,78 @@ default_font_size = 10
 Label/styles/normal = SubResource("StyleBoxFlat_51tvd")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eow3j"]
+content_margin_left = 4.0
+content_margin_top = 50.0
+content_margin_right = 4.0
 bg_color = Color(0.09411765, 0.101960786, 0.12156863, 1)
 draw_center = false
+
+[sub_resource type="FontVariation" id="FontVariation_j5wjh"]
+base_font = ExtResource("1_7jktm")
+variation_opentype = {
+1196572996: 0,
+1380929092: 0,
+1869640570: 12,
+1936486004: 0,
+2003072104: 80,
+2003265652: 400
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hve3p"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(0.16862746, 0.1764706, 0.21176471, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mfdv2"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(0.24266928, 0.25294754, 0.29873255, 1)
+corner_radius_top_left = 3
+corner_radius_bottom_left = 3
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j5wjh"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(0.12156863, 0.12941177, 0.15686275, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vef74"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(0.16862746, 0.1764706, 0.21176471, 1)
+corner_radius_top_left = 3
+corner_radius_bottom_left = 3
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j5wjh"]
+content_margin_left = 5.0
+content_margin_top = 2.0
+
+[sub_resource type="Theme" id="Theme_j5wjh"]
+default_font_size = 9
+Button/fonts/font = SubResource("FontVariation_j5wjh")
+Button/styles/hover = SubResource("StyleBoxFlat_hve3p")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_mfdv2")
+Button/styles/normal = SubResource("StyleBoxFlat_j5wjh")
+Button/styles/pressed = SubResource("StyleBoxFlat_vef74")
+Label/font_sizes/font_size = 11
+Label/styles/normal = SubResource("StyleBoxEmpty_j5wjh")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_51tvd"]
 
@@ -171,6 +241,58 @@ custom_minimum_size = Vector2(234.035, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_eow3j")
 
+[node name="Levels" type="VBoxContainer" parent="HBoxContainer/ChatDrawer" unique_id=1637783851]
+layout_mode = 2
+theme = SubResource("Theme_j5wjh")
+theme_override_constants/separation = 4
+
+[node name="ButtonTemplate" type="Button" parent="HBoxContainer/ChatDrawer/Levels" unique_id=561149323]
+visible = false
+layout_mode = 2
+toggle_mode = true
+text = "Untitled chat"
+alignment = 0
+text_overrun_behavior = 5
+clip_text = true
+
+[node name="Separator" type="Label" parent="HBoxContainer/ChatDrawer/Levels" unique_id=281592190]
+layout_mode = 2
+text = "Awaiting response"
+
+[node name="AwaitingResponse" type="VBoxContainer" parent="HBoxContainer/ChatDrawer/Levels" unique_id=64439828]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Button3" type="Button" parent="HBoxContainer/ChatDrawer/Levels/AwaitingResponse" unique_id=1663459971]
+layout_mode = 2
+text = "Untitled chat"
+alignment = 0
+text_overrun_behavior = 5
+clip_text = true
+
+[node name="Separator2" type="Label" parent="HBoxContainer/ChatDrawer/Levels" unique_id=46499927]
+layout_mode = 2
+text = "Idle"
+
+[node name="Idle" type="VBoxContainer" parent="HBoxContainer/ChatDrawer/Levels" unique_id=819799977]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Button2" type="Button" parent="HBoxContainer/ChatDrawer/Levels/Idle" unique_id=565987315]
+layout_mode = 2
+toggle_mode = true
+text = "Untitled chat"
+alignment = 0
+text_overrun_behavior = 5
+clip_text = true
+
+[node name="Button3" type="Button" parent="HBoxContainer/ChatDrawer/Levels/Idle" unique_id=333416056]
+layout_mode = 2
+text = "Untitled chat"
+alignment = 0
+text_overrun_behavior = 5
+clip_text = true
+
 [node name="MainChatArea" type="PanelContainer" parent="HBoxContainer" unique_id=343520999]
 custom_minimum_size = Vector2(650, 0)
 layout_mode = 2
@@ -190,12 +312,12 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4gu8e")
 
 [node name="TextInput" type="RichTextLabel" parent="HBoxContainer/MainChatArea/VBoxContainer/PanelContainer" unique_id=994780454]
+custom_maximum_size = Vector2(-1, 72)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 14
 bbcode_enabled = true
 text = "[color=#808080]Reply as BurbleAI...[/color]"
 fit_content = true
-scroll_active = false
 scroll_following = true
 meta_underlined = false
 
