@@ -1,10 +1,12 @@
-[gd_scene format=3 uid="uid://cfoj4o2n6e4ig"]
+[gd_scene format=3 uid="uid://brkykgsr08ltf"]
 
-[ext_resource type="PackedScene" uid="uid://cosiljv6epx1" path="res://data/character_portrait.tscn" id="1_35i8y"]
-[ext_resource type="Script" uid="uid://v2kfj3j4wufo" path="res://data/characters/scripts/pieter_teal.gd" id="2_qhqwo"]
-[ext_resource type="Texture2D" uid="uid://bggc3xy7cvnjb" path="res://assets/Teal/Teal_back.png" id="3_qhvls"]
-[ext_resource type="Texture2D" uid="uid://dr6v1i68kpqy7" path="res://assets/Teal/Teal_blank.png" id="4_2ltna"]
-[ext_resource type="Texture2D" uid="uid://bfxsy2e1w2476" path="res://assets/Teal/teal_featuresheet.png" id="5_rf2mv"]
+[ext_resource type="PackedScene" uid="uid://cosiljv6epx1" path="res://data/character_portrait.tscn" id="1_ovbqp"]
+[ext_resource type="Script" uid="uid://v2kfj3j4wufo" path="res://data/characters/scripts/pieter_teal.gd" id="2_rnulr"]
+[ext_resource type="Texture2D" uid="uid://bboradgfcfxb7" path="res://assets/ds_mod/discord mod2 back.png" id="3_yd70p"]
+[ext_resource type="Texture2D" uid="uid://xpam1v2ebhn0" path="res://assets/ds_mod/discord mod.png" id="4_w3yhx"]
+[ext_resource type="Texture2D" uid="uid://s5ni6lnud5jw" path="res://assets/ds_mod/DsMod_featuresheet.png" id="5_w3yhx"]
+[ext_resource type="Texture2D" uid="uid://dghavis78x8ud" path="res://assets/ds_mod/discord mod2_vin.png" id="6_w3yhx"]
+[ext_resource type="Texture2D" uid="uid://bxbin054kisv7" path="res://assets/ds_mod/discord mod table.png" id="6_xm37t"]
 
 [sub_resource type="Animation" id="Animation_fyyrn"]
 resource_name = "EyeThing"
@@ -323,8 +325,8 @@ _data = {
 &"thing": SubResource("Animation_w3yhx")
 }
 
-[node name="PieterTeal" unique_id=1095612352 instance=ExtResource("1_35i8y")]
-script = ExtResource("2_qhqwo")
+[node name="DsMod" unique_id=1095612352 instance=ExtResource("1_ovbqp")]
+script = ExtResource("2_rnulr")
 
 [node name="SubViewport" parent="SubViewportContainer" parent_id_path=PackedInt32Array(68375400) index="0" unique_id=424813258]
 canvas_item_default_texture_filter = 2
@@ -341,63 +343,73 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_qhvls")
+texture = ExtResource("3_yd70p")
 expand_mode = 3
 stretch_mode = 6
 
-[node name="Teal" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background" index="0" unique_id=1503015403]
+[node name="DsMod" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background" index="0" unique_id=1503015403]
 position = Vector2(98, 63.999992)
 scale = Vector2(0.134, 0.134)
-texture = ExtResource("4_2ltna")
+texture = ExtResource("4_w3yhx")
 
-[node name="EyebrowRight" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Teal" index="0" unique_id=722849891]
+[node name="EyebrowRight" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/DsMod" index="0" unique_id=722849891]
 position = Vector2(-119.402954, -201.49207)
-scale = Vector2(0.915, 0.915)
-texture = ExtResource("5_rf2mv")
+scale = Vector2(0.6495028, 0.6495028)
+texture = ExtResource("5_w3yhx")
 hframes = 4
 vframes = 4
 
-[node name="EyebrowLeft" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Teal" index="1" unique_id=943070337]
+[node name="EyebrowLeft" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/DsMod" index="1" unique_id=943070337]
 position = Vector2(119.403076, -201.49207)
-scale = Vector2(0.915, 0.915)
-texture = ExtResource("5_rf2mv")
+scale = Vector2(0.6495028, 0.6495028)
+texture = ExtResource("5_w3yhx")
 hframes = 4
 vframes = 4
 frame = 1
 
-[node name="EyeRight" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Teal" index="2" unique_id=1687755837]
-position = Vector2(-119.402954, -134.32776)
+[node name="EyeRight" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/DsMod" index="2" unique_id=1687755837]
+position = Vector2(-151.00574, -320.89557)
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("5_rf2mv")
+texture = ExtResource("5_w3yhx")
 hframes = 4
 vframes = 4
 frame = 14
 
-[node name="EyeRight2" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Teal" index="3" unique_id=842279749]
-position = Vector2(111.94037, -134.32776)
+[node name="EyeRight2" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/DsMod" index="3" unique_id=842279749]
+position = Vector2(46.799835, -328.35742)
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("5_rf2mv")
+texture = ExtResource("5_w3yhx")
 hframes = 4
 vframes = 4
 frame = 15
 
-[node name="Mouth" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Teal" index="4" unique_id=860317057]
+[node name="Mouth" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/DsMod" index="4" unique_id=860317057]
 position = Vector2(14.925415, 134.32886)
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("5_rf2mv")
+texture = ExtResource("5_w3yhx")
 hframes = 2
 vframes = 4
 frame = 6
 
-[node name="BlinkCycle" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/Background/Teal" index="5" unique_id=2045294401]
+[node name="BlinkCycle" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/Background/DsMod" index="5" unique_id=2045294401]
 libraries/ = SubResource("AnimationLibrary_w3yhx")
 autoplay = &"loop"
 
-[node name="MouthThing" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/Background/Teal" index="6" unique_id=737616105]
+[node name="MouthThing" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/Background/DsMod" index="6" unique_id=737616105]
 libraries/ = SubResource("AnimationLibrary_xm37t")
 
-[node name="MouthThingTimer" type="Timer" parent="SubViewportContainer/SubViewport/Background/Teal/MouthThing" index="0" unique_id=124600231]
+[node name="MouthThingTimer" type="Timer" parent="SubViewportContainer/SubViewport/Background/DsMod/MouthThing" index="0" unique_id=124600231]
 wait_time = 20.0
 
-[connection signal="animation_finished" from="SubViewportContainer/SubViewport/Background/Teal/BlinkCycle" to="." method="_on_blink_cycle_finished"]
-[connection signal="timeout" from="SubViewportContainer/SubViewport/Background/Teal/MouthThing/MouthThingTimer" to="." method="_on_mouth_thing_timeout"]
+[node name="DiscordModTable2" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background" index="1" unique_id=1873597452]
+position = Vector2(98.25, 70.5)
+scale = Vector2(0.14644195, 0.0974026)
+texture = ExtResource("6_w3yhx")
+
+[node name="DiscordModTable" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background" index="2" unique_id=526558106]
+position = Vector2(97.99999, 42.999996)
+scale = Vector2(0.14681648, 0.14016813)
+texture = ExtResource("6_xm37t")
+
+[connection signal="animation_finished" from="SubViewportContainer/SubViewport/Background/DsMod/BlinkCycle" to="." method="_on_blink_cycle_finished"]
+[connection signal="timeout" from="SubViewportContainer/SubViewport/Background/DsMod/MouthThing/MouthThingTimer" to="." method="_on_mouth_thing_timeout"]

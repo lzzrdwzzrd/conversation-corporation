@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dpkmlrwhi3n18" path="res://assets/Back.tscn" id="3_eow3j"]
 [ext_resource type="PackedScene" uid="uid://2tvo7037aw3o" path="res://data/levels/level0-test.tscn" id="4_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://clrem4y8mdb8f" path="res://assets/trader-test.png" id="5_7jktm"]
-[ext_resource type="PackedScene" uid="uid://brkykgsr08ltf" path="res://data/characters/scenes/pieter_teal.tscn" id="6_ryrav"]
+[ext_resource type="PackedScene" uid="uid://cfoj4o2n6e4ig" path="res://data/characters/scenes/pieter_teal.tscn" id="8_j5wjh"]
 
 [sub_resource type="FontVariation" id="FontVariation_7jktm"]
 base_font = ExtResource("1_7jktm")
@@ -123,16 +123,12 @@ text = "User (camera #0)"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="PieterTeal" parent="." unique_id=1095612352 instance=ExtResource("6_ryrav")]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -215.0
+[node name="PieterTeal" parent="." unique_id=1095612352 instance=ExtResource("8_j5wjh")]
+layout_mode = 0
+offset_left = 937.0
 offset_top = 232.0
-offset_right = -19.0
+offset_right = 1133.0
 offset_bottom = 360.0
-grow_horizontal = 0
 
 [node name="NameLabel" type="Label" parent="PieterTeal" unique_id=181020547]
 layout_mode = 1
@@ -154,8 +150,8 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -164.0
-offset_top = -20.0
+offset_left = -196.0
+offset_top = -21.0
 grow_horizontal = 0
 text = "Founder & CEO of BurbleAI"
 horizontal_alignment = 2

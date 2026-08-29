@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy6wqd5yapyt7"
-path="res://.godot/imported/Android Expanded - 2.png-8be38a5fb0e8f733e2cdc174ef5a0992.ctex"
+uid="uid://bboradgfcfxb7"
+path="res://.godot/imported/discord mod2 back.png-3629f474c1a65937a7990ad930b7bf8d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Android Expanded - 2.png"
-dest_files=["res://.godot/imported/Android Expanded - 2.png-8be38a5fb0e8f733e2cdc174ef5a0992.ctex"]
+source_file="res://assets/ds_mod/discord mod2 back.png"
+dest_files=["res://.godot/imported/discord mod2 back.png-3629f474c1a65937a7990ad930b7bf8d.ctex"]
 
 [params]
 
