@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1vrf5gckqoeg"
-path="res://.godot/imported/Teal.png-d6b77185a47d94dcf6478b02d1b84c7a.ctex"
+uid="uid://qtaqlud4n36a"
+path="res://.godot/imported/casino_guy_test.png-c843105c30ffd1bf239354f698f31ab6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Teal/Teal.png"
-dest_files=["res://.godot/imported/Teal.png-d6b77185a47d94dcf6478b02d1b84c7a.ctex"]
+source_file="res://assets/casino_guy_test.png"
+dest_files=["res://.godot/imported/casino_guy_test.png-c843105c30ffd1bf239354f698f31ab6.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7td8qjp7vb61"
-path="res://.godot/imported/GrandMa_featuresheet.png-890f9d155cc5c3dc9b0d7ab8f3177f5f.ctex"
+uid="uid://bh3subjo3oox8"
+path="res://.godot/imported/teal_test.png-0314d9f514f4cdf36c95a5f745867bea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/grand_ma/GrandMa_featuresheet.png"
-dest_files=["res://.godot/imported/GrandMa_featuresheet.png-890f9d155cc5c3dc9b0d7ab8f3177f5f.ctex"]
+source_file="res://assets/teal_test.png"
+dest_files=["res://.godot/imported/teal_test.png-0314d9f514f4cdf36c95a5f745867bea.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuktfh856ki4m"
-path="res://.godot/imported/soyjak_back.png-0d03411ad770b11df2b59e2670889115.ctex"
+uid="uid://bh3ainkuqksu8"
+path="res://.godot/imported/gambler_featuresheet.png-ad258f889835d0654178572efdcacd37.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/soyjak/soyjak_back.png"
-dest_files=["res://.godot/imported/soyjak_back.png-0d03411ad770b11df2b59e2670889115.ctex"]
+source_file="res://assets/gambler/gambler_featuresheet.png"
+dest_files=["res://.godot/imported/gambler_featuresheet.png-ad258f889835d0654178572efdcacd37.ctex"]
 
 [params]
 

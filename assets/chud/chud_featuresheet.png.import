@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5qa5dng01mqe"
-path="res://.godot/imported/businessman_back.png-3528d009dadbebd54fd24a0ffdbaed7b.ctex"
+uid="uid://c3yawm744bqit"
+path="res://.godot/imported/chud_featuresheet.png-8e694acb1846611e481557353dac1639.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/businessman/businessman_back.png"
-dest_files=["res://.godot/imported/businessman_back.png-3528d009dadbebd54fd24a0ffdbaed7b.ctex"]
+source_file="res://assets/chud/chud_featuresheet.png"
+dest_files=["res://.godot/imported/chud_featuresheet.png-8e694acb1846611e481557353dac1639.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxbin054kisv7"
-path="res://.godot/imported/discord mod table.png-a63b09365a0d0133eeb5bfde1ddc0d48.ctex"
+uid="uid://bboradgfcfxb7"
+path="res://.godot/imported/neckbeard_bg.png-de1eebcd22f8d5732e9e06be76ffb054.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ds_mod/discord mod table.png"
-dest_files=["res://.godot/imported/discord mod table.png-a63b09365a0d0133eeb5bfde1ddc0d48.ctex"]
+source_file="res://assets/neckbeard/neckbeard_bg.png"
+dest_files=["res://.godot/imported/neckbeard_bg.png-de1eebcd22f8d5732e9e06be76ffb054.ctex"]
 
 [params]
 

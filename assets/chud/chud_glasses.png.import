@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dktxveewifevf"
-path="res://.godot/imported/soyjak.png-714fca62c5a4def41a7dfa71ee0fff0a.ctex"
+uid="uid://bchcssblxsmhi"
+path="res://.godot/imported/chud_glasses.png-39f9d0e8a5fb025d15a3eb2481c65b6b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/soyjak/soyjak.png"
-dest_files=["res://.godot/imported/soyjak.png-714fca62c5a4def41a7dfa71ee0fff0a.ctex"]
+source_file="res://assets/chud/chud_glasses.png"
+dest_files=["res://.godot/imported/chud_glasses.png-39f9d0e8a5fb025d15a3eb2481c65b6b.ctex"]
 
 [params]
 

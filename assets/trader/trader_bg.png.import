@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://er7jlyrj0vsc"
-path="res://.godot/imported/grandma_back.png-00250105fad420d1092477e5ee8b9c8b.ctex"
+uid="uid://b5qa5dng01mqe"
+path="res://.godot/imported/trader_bg.png-d5390369f47f41774662c448a4824690.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/grand_ma/grandma_back.png"
-dest_files=["res://.godot/imported/grandma_back.png-00250105fad420d1092477e5ee8b9c8b.ctex"]
+source_file="res://assets/trader/trader_bg.png"
+dest_files=["res://.godot/imported/trader_bg.png-d5390369f47f41774662c448a4824690.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bggc3xy7cvnjb"
-path="res://.godot/imported/Teal_back.png-a77ed2ae2e35598195740da6795971a4.ctex"
+uid="uid://er7jlyrj0vsc"
+path="res://.godot/imported/gran_bg.png-febe7c9954757ad575355b6927399ab7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Teal/Teal_back.png"
-dest_files=["res://.godot/imported/Teal_back.png-a77ed2ae2e35598195740da6795971a4.ctex"]
+source_file="res://assets/gran/gran_bg.png"
+dest_files=["res://.godot/imported/gran_bg.png-febe7c9954757ad575355b6927399ab7.ctex"]
 
 [params]
 

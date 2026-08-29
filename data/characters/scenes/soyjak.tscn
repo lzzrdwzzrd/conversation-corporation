@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://cosiljv6epx1" path="res://data/character_portrait.tscn" id="1_w16wu"]
 [ext_resource type="Script" uid="uid://v2kfj3j4wufo" path="res://data/characters/scripts/pieter_teal.gd" id="2_1vfol"]
-[ext_resource type="Texture2D" uid="uid://cuktfh856ki4m" path="res://assets/soyjak/soyjak_back.png" id="3_7jnrs"]
-[ext_resource type="Texture2D" uid="uid://dktxveewifevf" path="res://assets/soyjak/soyjak.png" id="4_w16wu"]
-[ext_resource type="Texture2D" uid="uid://c3yawm744bqit" path="res://assets/soyjak/Soyjak_featuresheet.png" id="5_1vfol"]
-[ext_resource type="Texture2D" uid="uid://bchcssblxsmhi" path="res://assets/soyjak/soyjak_glasses.png" id="6_irn65"]
+[ext_resource type="Texture2D" uid="uid://cuktfh856ki4m" path="res://assets/chud/chug_bg.png" id="3_7jnrs"]
+[ext_resource type="Texture2D" uid="uid://dktxveewifevf" path="res://assets/chud/chud_blank.png" id="4_w16wu"]
+[ext_resource type="Texture2D" uid="uid://c3yawm744bqit" path="res://assets/chud/chud_featuresheet.png" id="5_1vfol"]
+[ext_resource type="Texture2D" uid="uid://bchcssblxsmhi" path="res://assets/chud/chud_glasses.png" id="6_irn65"]
 
 [node name="DsMod" unique_id=1095612352 instance=ExtResource("1_w16wu")]
 script = ExtResource("2_1vfol")

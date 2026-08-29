@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dghavis78x8ud"
-path="res://.godot/imported/discord mod2_vin.png-0d0943b33ac6552745107593ee9515d9.ctex"
+uid="uid://bcjdps4xkbbnm"
+path="res://.godot/imported/gambler_blank.png-4189fc9854b0e9970ec49ad3abafe697.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ds_mod/discord mod2_vin.png"
-dest_files=["res://.godot/imported/discord mod2_vin.png-0d0943b33ac6552745107593ee9515d9.ctex"]
+source_file="res://assets/gambler/gambler_blank.png"
+dest_files=["res://.godot/imported/gambler_blank.png-4189fc9854b0e9970ec49ad3abafe697.ctex"]
 
 [params]
 

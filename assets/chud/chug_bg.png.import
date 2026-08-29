@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j8f21pv2lfdo"
-path="res://.godot/imported/guru_back.png-e5629aed822dc3010e4b495131ac3e74.ctex"
+uid="uid://cuktfh856ki4m"
+path="res://.godot/imported/chug_bg.png-6864f1d7fdcad689a997d0535b1e9e30.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/guru/guru_back.png"
-dest_files=["res://.godot/imported/guru_back.png-e5629aed822dc3010e4b495131ac3e74.ctex"]
+source_file="res://assets/chud/chug_bg.png"
+dest_files=["res://.godot/imported/chug_bg.png-6864f1d7fdcad689a997d0535b1e9e30.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cek20phpm5qim"
-path="res://.godot/imported/businessman.png-2cc0234b3b101696602b19616325fc4f.ctex"
+uid="uid://2hha5kuwp2nf"
+path="res://.godot/imported/trader_glasses.png-dd2d1450821782b66efa13b926da5c2f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/businessman/businessman.png"
-dest_files=["res://.godot/imported/businessman.png-2cc0234b3b101696602b19616325fc4f.ctex"]
+source_file="res://assets/trader/trader_glasses.png"
+dest_files=["res://.godot/imported/trader_glasses.png-dd2d1450821782b66efa13b926da5c2f.ctex"]
 
 [params]
 

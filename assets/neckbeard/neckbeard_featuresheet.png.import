@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://s5ni6lnud5jw"
-path="res://.godot/imported/DsMod_featuresheet.png-b3f71d189300109d6735d87f3c87d78d.ctex"
+path="res://.godot/imported/neckbeard_featuresheet.png-c4145ba69362bdd63eb138a702a724c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ds_mod/DsMod_featuresheet.png"
-dest_files=["res://.godot/imported/DsMod_featuresheet.png-b3f71d189300109d6735d87f3c87d78d.ctex"]
+source_file="res://assets/neckbeard/neckbeard_featuresheet.png"
+dest_files=["res://.godot/imported/neckbeard_featuresheet.png-c4145ba69362bdd63eb138a702a724c8.ctex"]
 
 [params]
 

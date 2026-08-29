@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://cosiljv6epx1" path="res://data/character_portrait.tscn" id="1_7agb4"]
 [ext_resource type="Script" uid="uid://v2kfj3j4wufo" path="res://data/characters/scripts/pieter_teal.gd" id="2_1lhjp"]
-[ext_resource type="Texture2D" uid="uid://d4duslgs55ige" path="res://assets/casino_guy/casino_back.png" id="3_7agb4"]
-[ext_resource type="Texture2D" uid="uid://bcjdps4xkbbnm" path="res://assets/casino_guy/casino_blank.png" id="4_1lhjp"]
-[ext_resource type="Texture2D" uid="uid://bh3ainkuqksu8" path="res://assets/casino_guy/Casino_featuresheet.png" id="5_b13g3"]
+[ext_resource type="Texture2D" uid="uid://d4duslgs55ige" path="res://assets/gambler/gambler_bg.png" id="3_7agb4"]
+[ext_resource type="Texture2D" uid="uid://bcjdps4xkbbnm" path="res://assets/gambler/gambler_blank.png" id="4_1lhjp"]
+[ext_resource type="Texture2D" uid="uid://bh3ainkuqksu8" path="res://assets/gambler/gambler_featuresheet.png" id="5_b13g3"]
 
 [node name="DsMod" unique_id=1095612352 instance=ExtResource("1_7agb4")]
 script = ExtResource("2_1lhjp")

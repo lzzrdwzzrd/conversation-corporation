@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://cosiljv6epx1" path="res://data/character_portrait.tscn" id="1_os34h"]
 [ext_resource type="Script" uid="uid://v2kfj3j4wufo" path="res://data/characters/scripts/pieter_teal.gd" id="2_cvrxp"]
-[ext_resource type="Texture2D" uid="uid://b5qa5dng01mqe" path="res://assets/businessman/businessman_back.png" id="3_dkc3u"]
-[ext_resource type="Texture2D" uid="uid://cek20phpm5qim" path="res://assets/businessman/businessman.png" id="4_os34h"]
-[ext_resource type="Texture2D" uid="uid://cqktm0bfeeox6" path="res://assets/businessman/businessman_featuresheet.png" id="5_dkc3u"]
-[ext_resource type="Texture2D" uid="uid://2hha5kuwp2nf" path="res://assets/businessman/businessman_glasses.png" id="6_cvrxp"]
+[ext_resource type="Texture2D" uid="uid://b5qa5dng01mqe" path="res://assets/trader/trader_bg.png" id="3_dkc3u"]
+[ext_resource type="Texture2D" uid="uid://cek20phpm5qim" path="res://assets/trader/trader_blank.png" id="4_os34h"]
+[ext_resource type="Texture2D" uid="uid://cqktm0bfeeox6" path="res://assets/trader/trader_featuresheet.png" id="5_dkc3u"]
+[ext_resource type="Texture2D" uid="uid://2hha5kuwp2nf" path="res://assets/trader/trader_glasses.png" id="6_cvrxp"]
 
 [node name="DsMod" unique_id=1095612352 instance=ExtResource("1_os34h")]
 script = ExtResource("2_cvrxp")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh3subjo3oox8"
-path="res://.godot/imported/teal-portrait-test.png-14841fef8c0f9351013f7e06d7d8cb3c.ctex"
+uid="uid://dghavis78x8ud"
+path="res://.godot/imported/neckbeard_vignette.png-ff2d944dfb6350b3c246e78b18ecce7e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/teal-portrait-test.png"
-dest_files=["res://.godot/imported/teal-portrait-test.png-14841fef8c0f9351013f7e06d7d8cb3c.ctex"]
+source_file="res://assets/neckbeard/neckbeard_vignette.png"
+dest_files=["res://.godot/imported/neckbeard_vignette.png-ff2d944dfb6350b3c246e78b18ecce7e.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
