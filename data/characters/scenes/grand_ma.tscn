@@ -28,19 +28,19 @@ texture = ExtResource("3_omijg")
 expand_mode = 3
 stretch_mode = 6
 
-[node name="DsMod" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background" index="0" unique_id=1503015403]
+[node name="GrandMa" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background" index="0" unique_id=1503015403]
 position = Vector2(99.19699, 29.888346)
 scale = Vector2(0.15895402, 0.15895402)
 texture = ExtResource("4_t70vh")
 
-[node name="EyebrowRight" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/DsMod" index="0" unique_id=722849891]
+[node name="EyebrowRight" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/GrandMa" index="0" unique_id=722849891]
 position = Vector2(-119.402954, 282.92474)
 scale = Vector2(0.4394652, 0.4394652)
 texture = ExtResource("5_5vbw2")
 hframes = 4
 vframes = 4
 
-[node name="EyebrowLeft" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/DsMod" index="1" unique_id=943070337]
+[node name="EyebrowLeft" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/GrandMa" index="1" unique_id=943070337]
 position = Vector2(23.925196, 290.09427)
 scale = Vector2(0.4394652, 0.4394652)
 texture = ExtResource("5_5vbw2")
@@ -48,7 +48,7 @@ hframes = 4
 vframes = 4
 frame = 1
 
-[node name="EyeRight" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/DsMod" index="2" unique_id=1687755837]
+[node name="EyeRight" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/GrandMa" index="2" unique_id=1687755837]
 position = Vector2(-133.35303, 334.13232)
 scale = Vector2(0.4746623, 0.4746623)
 texture = ExtResource("5_5vbw2")
@@ -56,15 +56,15 @@ hframes = 4
 vframes = 4
 frame = 14
 
-[node name="EyeRight2" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/DsMod" index="3" unique_id=842279749]
-position = Vector2(30.229004, 338.30762)
+[node name="EyeRight2" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/GrandMa" index="3" unique_id=842279749]
+position = Vector2(23.937866, 332.0166)
 scale = Vector2(0.48076594, 0.48076594)
 texture = ExtResource("5_5vbw2")
 hframes = 4
 vframes = 4
 frame = 15
 
-[node name="Mouth" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/DsMod" index="4" unique_id=860317057]
+[node name="Mouth" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/GrandMa" index="4" unique_id=860317057]
 position = Vector2(-45.277214, 491.41037)
 scale = Vector2(0.34350884, 0.34350884)
 texture = ExtResource("5_5vbw2")

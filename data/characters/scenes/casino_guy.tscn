@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://dc0ekdumpsbb0"]
+
+[ext_resource type="PackedScene" uid="uid://cosiljv6epx1" path="res://data/character_portrait.tscn" id="1_7agb4"]
+[ext_resource type="Script" uid="uid://v2kfj3j4wufo" path="res://data/characters/scripts/pieter_teal.gd" id="2_1lhjp"]
+[ext_resource type="Texture2D" uid="uid://d4duslgs55ige" path="res://assets/casino_guy/casino_back.png" id="3_7agb4"]
+[ext_resource type="Texture2D" uid="uid://bcjdps4xkbbnm" path="res://assets/casino_guy/casino_blank.png" id="4_1lhjp"]
+[ext_resource type="Texture2D" uid="uid://bh3ainkuqksu8" path="res://assets/casino_guy/Casino_featuresheet.png" id="5_b13g3"]
+
+[node name="DsMod" unique_id=1095612352 instance=ExtResource("1_7agb4")]
+script = ExtResource("2_1lhjp")
+
+[node name="SubViewport" parent="SubViewportContainer" parent_id_path=PackedInt32Array(68375400) index="0" unique_id=424813258]
+canvas_item_default_texture_filter = 2
+positional_shadow_atlas_size = 0
+positional_shadow_atlas_quad_0 = 0
+positional_shadow_atlas_quad_1 = 0
+positional_shadow_atlas_quad_2 = 0
+positional_shadow_atlas_quad_3 = 0
+
+[node name="Background" type="TextureRect" parent="SubViewportContainer/SubViewport" index="0" unique_id=32766126]
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_7agb4")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="CasinoGuy" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background" index="0" unique_id=1503015403]
+position = Vector2(99.86102, 51.931362)
+scale = Vector2(0.26973918, 0.26973927)
+texture = ExtResource("4_1lhjp")
+
+[node name="EyebrowRight" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/CasinoGuy" index="0" unique_id=722849891]
+position = Vector2(-64.80522, -54.45932)
+scale = Vector2(0.299342, 0.299342)
+texture = ExtResource("5_b13g3")
+hframes = 4
+vframes = 4
+
+[node name="EyebrowLeft" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/CasinoGuy" index="1" unique_id=943070337]
+position = Vector2(33.759644, -58.308594)
+scale = Vector2(0.29934195, 0.29934195)
+texture = ExtResource("5_b13g3")
+hframes = 4
+vframes = 4
+frame = 1
+
+[node name="EyeRight" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/CasinoGuy" index="2" unique_id=1687755837]
+position = Vector2(-66.39307, -19.837097)
+scale = Vector2(0.32482493, 0.32482493)
+texture = ExtResource("5_b13g3")
+hframes = 4
+vframes = 4
+frame = 14
+
+[node name="EyeRight2" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/CasinoGuy" index="3" unique_id=842279749]
+position = Vector2(32.827087, -26.100708)
+scale = Vector2(0.3290018, 0.3290018)
+texture = ExtResource("5_b13g3")
+hframes = 4
+vframes = 4
+frame = 15
+
+[node name="Mouth" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/CasinoGuy" index="4" unique_id=860317057]
+position = Vector2(-10.453003, 67.539856)
+scale = Vector2(0.2861247, 0.2861247)
+texture = ExtResource("5_b13g3")
+hframes = 2
+vframes = 4
+frame = 6

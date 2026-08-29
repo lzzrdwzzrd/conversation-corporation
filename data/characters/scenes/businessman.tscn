@@ -50,8 +50,8 @@ vframes = 4
 frame = 1
 
 [node name="EyeRight" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Businessman" index="2" unique_id=1687755837]
-position = Vector2(-24.175941, -24.175907)
-scale = Vector2(0.24086663, 0.26587647)
+position = Vector2(-24.175903, -27.22821)
+scale = Vector2(0.19194573, 0.21187599)
 texture = ExtResource("5_dkc3u")
 hframes = 4
 vframes = 4
@@ -59,15 +59,15 @@ frame = 14
 
 [node name="EyeRight2" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Businessman" index="3" unique_id=842279749]
 position = Vector2(44.898182, -27.629623)
-scale = Vector2(0.22737546, 0.24030721)
+scale = Vector2(0.18119463, 0.19149989)
 texture = ExtResource("5_dkc3u")
 hframes = 4
 vframes = 4
 frame = 15
 
 [node name="Mouth" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Businessman" index="4" unique_id=860317057]
-position = Vector2(13.814831, 37.990776)
-scale = Vector2(0.14642924, 0.20451757)
+position = Vector2(13.814819, 35.101715)
+scale = Vector2(0.1606524, 0.17396669)
 texture = ExtResource("5_dkc3u")
 hframes = 2
 vframes = 4
