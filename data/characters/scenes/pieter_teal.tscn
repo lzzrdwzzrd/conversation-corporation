@@ -3,8 +3,18 @@
 [ext_resource type="PackedScene" uid="uid://cosiljv6epx1" path="res://data/character_portrait.tscn" id="1_35i8y"]
 [ext_resource type="Script" uid="uid://v2kfj3j4wufo" path="res://data/characters/scripts/pieter_teal.gd" id="2_qhqwo"]
 [ext_resource type="Texture2D" uid="uid://bggc3xy7cvnjb" path="res://assets/teal/teal_bg.png" id="3_qhvls"]
+[ext_resource type="Shader" uid="uid://cmhj1spw5tq7p" path="res://shaders/portraits.gdshader" id="3_yd70p"]
 [ext_resource type="Texture2D" uid="uid://dr6v1i68kpqy7" path="res://assets/teal/teal_blank.png" id="4_2ltna"]
 [ext_resource type="Texture2D" uid="uid://bfxsy2e1w2476" path="res://assets/teal/teal_featuresheet.png" id="5_rf2mv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w3yhx"]
+shader = ExtResource("3_yd70p")
+shader_parameter/washout_intensity = 0.0450000021375
+shader_parameter/blur_amount = 0.10000000475
+shader_parameter/blockiness = 220.0
+shader_parameter/color_steps = 15.61200036157
+shader_parameter/grain_amount = 0.02
+shader_parameter/frame_rate = 20.0
 
 [sub_resource type="Animation" id="Animation_fyyrn"]
 resource_name = "EyeThing"
@@ -326,7 +336,10 @@ _data = {
 [node name="PieterTeal" unique_id=1095612352 instance=ExtResource("1_35i8y")]
 script = ExtResource("2_qhqwo")
 
-[node name="SubViewport" parent="SubViewportContainer" parent_id_path=PackedInt32Array(68375400) index="0" unique_id=424813258]
+[node name="SubViewportContainer" parent="." index="0" unique_id=68375400]
+material = SubResource("ShaderMaterial_w3yhx")
+
+[node name="SubViewport" parent="SubViewportContainer" index="0" unique_id=424813258]
 canvas_item_default_texture_filter = 2
 positional_shadow_atlas_size = 0
 positional_shadow_atlas_quad_0 = 0

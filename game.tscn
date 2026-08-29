@@ -31,21 +31,21 @@ shader_parameter/blockiness = 258.83300991956753
 shader_parameter/color_steps = 10.7690001315275
 shader_parameter/grain_amount = 0.10000000149012
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_51tvd"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iotsf"]
 content_margin_left = 5.0
 content_margin_right = 5.0
 bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="FontVariation" id="FontVariation_feb5d"]
+[sub_resource type="FontVariation" id="FontVariation_lc2xo"]
 base_font = ExtResource("2_feb5d")
 variation_opentype = {
 2003265652: 400
 }
 
 [sub_resource type="Theme" id="Theme_e2o6t"]
-default_font = SubResource("FontVariation_feb5d")
+default_font = SubResource("FontVariation_lc2xo")
 default_font_size = 10
-Label/styles/normal = SubResource("StyleBoxFlat_51tvd")
+Label/styles/normal = SubResource("StyleBoxFlat_iotsf")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eow3j"]
 content_margin_left = 4.0

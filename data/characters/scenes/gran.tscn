@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://cjor45ewowfyt"]
+
+[ext_resource type="PackedScene" uid="uid://cosiljv6epx1" path="res://data/character_portrait.tscn" id="1_l0qdg"]
+[ext_resource type="Script" uid="uid://v2kfj3j4wufo" path="res://data/characters/scripts/pieter_teal.gd" id="2_m1vyt"]
+[ext_resource type="Texture2D" uid="uid://er7jlyrj0vsc" path="res://assets/gran/gran_bg.png" id="3_f4m4k"]
+[ext_resource type="Shader" uid="uid://cmhj1spw5tq7p" path="res://shaders/portraits.gdshader" id="3_m1vyt"]
+[ext_resource type="Texture2D" uid="uid://bo63rblckifoc" path="res://assets/gran/gran_blank.png" id="4_y4jxb"]
+[ext_resource type="Texture2D" uid="uid://c7td8qjp7vb61" path="res://assets/gran/gran_featuresheet.png" id="5_ds75a"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f4m4k"]
+shader = ExtResource("3_m1vyt")
+shader_parameter/washout_intensity = 0.446000021185
+shader_parameter/blur_amount = 3.0
+shader_parameter/blockiness = 100.0
+shader_parameter/color_steps = 8.0
+shader_parameter/grain_amount = 0.12
+shader_parameter/frame_rate = 5.0
+
+[node name="Gran" unique_id=1095612352 instance=ExtResource("1_l0qdg")]
+script = ExtResource("2_m1vyt")
+
+[node name="SubViewportContainer" parent="." index="0" unique_id=68375400]
+material = SubResource("ShaderMaterial_f4m4k")
+
+[node name="SubViewport" parent="SubViewportContainer" index="0" unique_id=424813258]
+canvas_item_default_texture_filter = 2
+positional_shadow_atlas_size = 0
+positional_shadow_atlas_quad_0 = 0
+positional_shadow_atlas_quad_1 = 0
+positional_shadow_atlas_quad_2 = 0
+positional_shadow_atlas_quad_3 = 0
+
+[node name="Background" type="TextureRect" parent="SubViewportContainer/SubViewport" index="0" unique_id=32766126]
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_f4m4k")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="Gran" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background" index="0" unique_id=1503015403]
+position = Vector2(99.19699, 29.888346)
+scale = Vector2(0.15895402, 0.15895402)
+texture = ExtResource("4_y4jxb")
+
+[node name="EyebrowRight" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Gran" index="0" unique_id=722849891]
+position = Vector2(-119.402954, 282.92474)
+scale = Vector2(0.4394652, 0.4394652)
+texture = ExtResource("5_ds75a")
+hframes = 4
+vframes = 4
+
+[node name="EyebrowLeft" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Gran" index="1" unique_id=943070337]
+position = Vector2(23.925196, 290.09427)
+scale = Vector2(0.4394652, 0.4394652)
+texture = ExtResource("5_ds75a")
+hframes = 4
+vframes = 4
+frame = 1
+
+[node name="EyeRight" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Gran" index="2" unique_id=1687755837]
+position = Vector2(-133.35303, 334.13232)
+scale = Vector2(0.4746623, 0.4746623)
+texture = ExtResource("5_ds75a")
+hframes = 4
+vframes = 4
+frame = 14
+
+[node name="EyeRight2" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Gran" index="3" unique_id=842279749]
+position = Vector2(23.937866, 332.0166)
+scale = Vector2(0.48076594, 0.48076594)
+texture = ExtResource("5_ds75a")
+hframes = 4
+vframes = 4
+frame = 15
+
+[node name="Mouth" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Gran" index="4" unique_id=860317057]
+position = Vector2(-45.277214, 491.41037)
+scale = Vector2(0.34350884, 0.34350884)
+texture = ExtResource("5_ds75a")
+hframes = 2
+vframes = 4
+frame = 6

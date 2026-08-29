@@ -1,10 +1,11 @@
 shader_type canvas_item;
 
-uniform float washout_intensity : hint_range(0.0, 1.0) = 0.3;
-uniform float blur_amount : hint_range(0.0, 5.0) = 1.0;
-uniform float blockiness : hint_range(50.0, 300.0) = 150.0;
-uniform float color_steps : hint_range(8, 32) = 16.0;
-uniform float grain_amount : hint_range(0.0, 0.1) = 0.02;
+uniform float washout_intensity = 0.3;
+uniform float blur_amount = 1.0;
+uniform float blockiness = 150.0;
+uniform float color_steps = 16.0;
+uniform float grain_amount = 0.02;
+uniform float frame_rate = 20.0;
 
 float rand(vec2 co) {
     return fract(sin(dot(co.xy, vec2(12.9898, 78.233))) * 43758.5453);
@@ -34,7 +35,7 @@ void fragment() {
     float live_steps = clamp(entropy(color_steps, color_steps * 0.7, 11.7, region), 4.0, 48.0);
 
     vec2 block_uv = floor(UV * live_blockiness) / live_blockiness;
-    vec2 texel_size = vec2(1.0) / vec2(textureSize(TEXTURE, 0));
+    vec2 texel_size = vec2(1.0) / vec2(textureSize(TEXTURE, 0) * 2);
 
     vec4 color = vec4(0.0);
     vec3 avg_color = vec3(0.0);
@@ -56,7 +57,7 @@ void fragment() {
     color.rgb = mix(color.rgb, vec3(grayscale) + vec3(0.1), washout_intensity);
     color.rgb = floor(color.rgb * (live_steps * 1.5)) / (live_steps * 1.5);
 
-    float noise = (rand(block_uv + fract(TIME * 0.1)) - 0.5) * 2.0;
+    float noise = (rand(block_uv + fract(floor(TIME * frame_rate) / frame_rate)) - 0.5) * 2.0;
     color.rgb += noise * (grain_amount * 0.5) * (1.0 - grayscale);
 
     COLOR = clamp(color, 0.0, 1.0);

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://baxdprh2d0157" path="res://data/level.gd" id="1_g83tb"]
 [ext_resource type="Script" uid="uid://bk3pnh8dft28o" path="res://data/message.gd" id="2_4emmc"]
-[ext_resource type="PackedScene" uid="uid://brkykgsr08ltf" path="res://data/characters/scenes/ds_mod.tscn" id="2_jueat"]
+[ext_resource type="PackedScene" uid="uid://brkykgsr08ltf" path="res://data/characters/scenes/pieter_teal.tscn" id="2_jueat"]
 
 [node name="Level0" type="Node" unique_id=497558949]
 script = ExtResource("1_g83tb")
@@ -11,5 +11,4 @@ metadata/_custom_type_script = "uid://baxdprh2d0157"
 
 [node name="UserMessage" type="Node" parent="." unique_id=1801480517]
 script = ExtResource("2_4emmc")
-is_from_user = true
 text_content = "gork is this true"

@@ -3,13 +3,32 @@
 [ext_resource type="PackedScene" uid="uid://cosiljv6epx1" path="res://data/character_portrait.tscn" id="1_4822n"]
 [ext_resource type="Script" uid="uid://v2kfj3j4wufo" path="res://data/characters/scripts/pieter_teal.gd" id="2_1smqt"]
 [ext_resource type="Texture2D" uid="uid://j8f21pv2lfdo" path="res://assets/guru/guru_bg.png" id="3_4822n"]
+[ext_resource type="Shader" uid="uid://cmhj1spw5tq7p" path="res://shaders/portraits.gdshader" id="3_bhxhd"]
 [ext_resource type="Texture2D" uid="uid://ccywgiit2nwv8" path="res://assets/guru/guru_blank.png" id="4_1smqt"]
 [ext_resource type="Texture2D" uid="uid://b6pwedbuvvqht" path="res://assets/guru/guru_featuresheet.png" id="5_bhxhd"]
+[ext_resource type="Texture2D" uid="uid://bfxsy2e1w2476" path="res://assets/teal/teal_featuresheet.png" id="7_bhxhd"]
+[ext_resource type="Shader" uid="uid://b3hy0w28toon8" path="res://shaders/hueshift.gdshader" id="7_tj6w4"]
 
-[node name="DsMod" unique_id=1095612352 instance=ExtResource("1_4822n")]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tj6w4"]
+shader = ExtResource("3_bhxhd")
+shader_parameter/washout_intensity = 0.0
+shader_parameter/blur_amount = 0.2
+shader_parameter/blockiness = 270.0
+shader_parameter/color_steps = 14.0
+shader_parameter/grain_amount = 0.02
+shader_parameter/frame_rate = 20.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bhxhd"]
+shader = ExtResource("7_tj6w4")
+shader_parameter/shift_amount = 196.0
+
+[node name="Guru" unique_id=1095612352 instance=ExtResource("1_4822n")]
 script = ExtResource("2_1smqt")
 
-[node name="SubViewport" parent="SubViewportContainer" parent_id_path=PackedInt32Array(68375400) index="0" unique_id=424813258]
+[node name="SubViewportContainer" parent="." index="0" unique_id=68375400]
+material = SubResource("ShaderMaterial_tj6w4")
+
+[node name="SubViewport" parent="SubViewportContainer" index="0" unique_id=424813258]
 canvas_item_default_texture_filter = 2
 positional_shadow_atlas_size = 0
 positional_shadow_atlas_quad_0 = 0
@@ -25,8 +44,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_4822n")
-expand_mode = 3
-stretch_mode = 6
+expand_mode = 1
 
 [node name="Guru" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background" index="0" unique_id=1503015403]
 position = Vector2(99.86102, 51.931362)
@@ -49,25 +67,26 @@ vframes = 4
 frame = 1
 
 [node name="EyeRight" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Guru" index="2" unique_id=1687755837]
-position = Vector2(-20.227966, -38.42135)
-scale = Vector2(0.16523068, 0.16523068)
+position = Vector2(-17.654907, -33.274902)
+scale = Vector2(0.14072163, 0.1072166)
 texture = ExtResource("5_bhxhd")
 hframes = 4
 vframes = 4
 frame = 14
 
 [node name="EyeRight2" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Guru" index="3" unique_id=842279749]
-position = Vector2(35.50992, -38.241234)
-scale = Vector2(0.18575281, 0.18575281)
+position = Vector2(36.38238, -37.22479)
+scale = Vector2(0.20103104, 0.14836083)
 texture = ExtResource("5_bhxhd")
 hframes = 4
 vframes = 4
 frame = 15
 
 [node name="Mouth" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Guru" index="4" unique_id=860317057]
-position = Vector2(10.650415, 18.189003)
+material = SubResource("ShaderMaterial_bhxhd")
+position = Vector2(8.077217, 23.335398)
 scale = Vector2(0.17087652, 0.16518946)
-texture = ExtResource("5_bhxhd")
+texture = ExtResource("7_bhxhd")
 hframes = 2
 vframes = 4
 frame = 6

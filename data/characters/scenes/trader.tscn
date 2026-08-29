@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://d3gy4lh1nd0qy"]
+
+[ext_resource type="PackedScene" uid="uid://cosiljv6epx1" path="res://data/character_portrait.tscn" id="1_6nlg1"]
+[ext_resource type="Script" uid="uid://v2kfj3j4wufo" path="res://data/characters/scripts/pieter_teal.gd" id="2_vrxue"]
+[ext_resource type="Texture2D" uid="uid://b5qa5dng01mqe" path="res://assets/trader/trader_bg.png" id="3_p3udm"]
+[ext_resource type="Texture2D" uid="uid://cek20phpm5qim" path="res://assets/trader/trader_blank.png" id="4_hwwe2"]
+[ext_resource type="Texture2D" uid="uid://cqktm0bfeeox6" path="res://assets/trader/trader_featuresheet.png" id="5_vl6p2"]
+[ext_resource type="Texture2D" uid="uid://2hha5kuwp2nf" path="res://assets/trader/trader_glasses.png" id="6_muxud"]
+[ext_resource type="Shader" uid="uid://cmhj1spw5tq7p" path="res://shaders/portraits.gdshader" id="7_hwwe2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hwwe2"]
+shader = ExtResource("7_hwwe2")
+shader_parameter/washout_intensity = 0.18400000874
+shader_parameter/blur_amount = 0.400000019
+shader_parameter/blockiness = 258.83300991956753
+shader_parameter/color_steps = 10.7690001315275
+shader_parameter/grain_amount = 0.10000000149012
+shader_parameter/frame_rate = 20.0
+
+[node name="Trader" unique_id=1095612352 instance=ExtResource("1_6nlg1")]
+script = ExtResource("2_vrxue")
+
+[node name="SubViewportContainer" parent="." index="0" unique_id=68375400]
+material = SubResource("ShaderMaterial_hwwe2")
+
+[node name="SubViewport" parent="SubViewportContainer" index="0" unique_id=424813258]
+canvas_item_default_texture_filter = 2
+positional_shadow_atlas_size = 0
+positional_shadow_atlas_quad_0 = 0
+positional_shadow_atlas_quad_1 = 0
+positional_shadow_atlas_quad_2 = 0
+positional_shadow_atlas_quad_3 = 0
+
+[node name="Background" type="TextureRect" parent="SubViewportContainer/SubViewport" index="0" unique_id=32766126]
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_p3udm")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="Businessman" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background" index="0" unique_id=1503015403]
+position = Vector2(98, 61.000004)
+scale = Vector2(0.32761917, 0.32761917)
+texture = ExtResource("4_hwwe2")
+
+[node name="EyebrowRight" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Businessman" index="0" unique_id=722849891]
+position = Vector2(-27.629272, -59.00598)
+scale = Vector2(0.21585937, 0.21585937)
+texture = ExtResource("5_vl6p2")
+hframes = 4
+vframes = 4
+
+[node name="EyebrowLeft" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Businessman" index="1" unique_id=943070337]
+position = Vector2(44.898132, -59.114258)
+scale = Vector2(0.21585941, 0.21585941)
+texture = ExtResource("5_vl6p2")
+hframes = 4
+vframes = 4
+frame = 1
+
+[node name="EyeRight" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Businessman" index="2" unique_id=1687755837]
+position = Vector2(-20.915142, -29.941772)
+scale = Vector2(0.16647103, 0.18375617)
+texture = ExtResource("5_vl6p2")
+hframes = 4
+vframes = 4
+frame = 14
+
+[node name="EyeRight2" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Businessman" index="3" unique_id=842279749]
+position = Vector2(41.06292, -30.685497)
+scale = Vector2(0.15123165, 0.15983279)
+texture = ExtResource("5_vl6p2")
+hframes = 4
+vframes = 4
+frame = 15
+
+[node name="Mouth" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Businessman" index="4" unique_id=860317057]
+position = Vector2(10.762451, 35.101685)
+scale = Vector2(0.12488298, 0.14233647)
+texture = ExtResource("5_vl6p2")
+hframes = 2
+vframes = 4
+frame = 6
+
+[node name="BusinessmanGlasses" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Businessman" index="5" unique_id=2122620446]
+position = Vector2(-1.4305115e-06, 3.0517578e-05)
+scale = Vector2(1.0742514, 0.98666656)
+texture = ExtResource("6_muxud")

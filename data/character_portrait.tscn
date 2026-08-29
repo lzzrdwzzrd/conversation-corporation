@@ -4,14 +4,6 @@
 [ext_resource type="Shader" uid="uid://cmhj1spw5tq7p" path="res://shaders/portraits.gdshader" id="2_2n2hs"]
 [ext_resource type="FontFile" uid="uid://uxbxo10p6xe6" path="res://fonts/IntelOneMono.ttf" id="2_gnd3w"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gnd3w"]
-shader = ExtResource("2_2n2hs")
-shader_parameter/washout_intensity = 0.0590000028025
-shader_parameter/blur_amount = 0.30000001425
-shader_parameter/blockiness = 258.83300991956753
-shader_parameter/color_steps = 10.7690001315275
-shader_parameter/grain_amount = 0.030000001425
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_51tvd"]
 content_margin_left = 5.0
 content_margin_right = 5.0
@@ -28,8 +20,15 @@ default_font = SubResource("FontVariation_feb5d")
 default_font_size = 10
 Label/styles/normal = SubResource("StyleBoxFlat_51tvd")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gnd3w"]
+shader = ExtResource("2_2n2hs")
+shader_parameter/washout_intensity = 0.0
+shader_parameter/blur_amount = 0.874000041515
+shader_parameter/blockiness = 258.83300991956753
+shader_parameter/color_steps = 10.7690001315275
+shader_parameter/grain_amount = 0.10000000149012
+
 [node name="CharacterPortrait" type="Control" unique_id=1095612352]
-material = SubResource("ShaderMaterial_gnd3w")
 custom_minimum_size = Vector2(196, 128)
 custom_maximum_size = Vector2(196, 128)
 layout_mode = 3
