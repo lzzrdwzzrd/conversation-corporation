@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://cjor45ewowfyt"]
+
+[ext_resource type="PackedScene" uid="uid://cosiljv6epx1" path="res://data/character_portrait.tscn" id="1_5vbw2"]
+[ext_resource type="Script" uid="uid://v2kfj3j4wufo" path="res://data/characters/scripts/pieter_teal.gd" id="2_3otla"]
+[ext_resource type="Texture2D" uid="uid://er7jlyrj0vsc" path="res://assets/grand_ma/grandma_back.png" id="3_omijg"]
+[ext_resource type="Texture2D" uid="uid://bo63rblckifoc" path="res://assets/grand_ma/grandma_blank2.png" id="4_t70vh"]
+[ext_resource type="Texture2D" uid="uid://c7td8qjp7vb61" path="res://assets/grand_ma/GrandMa_featuresheet.png" id="5_5vbw2"]
+
+[node name="DsMod" unique_id=1095612352 instance=ExtResource("1_5vbw2")]
+script = ExtResource("2_3otla")
+
+[node name="SubViewport" parent="SubViewportContainer" parent_id_path=PackedInt32Array(68375400) index="0" unique_id=424813258]
+canvas_item_default_texture_filter = 2
+positional_shadow_atlas_size = 0
+positional_shadow_atlas_quad_0 = 0
+positional_shadow_atlas_quad_1 = 0
+positional_shadow_atlas_quad_2 = 0
+positional_shadow_atlas_quad_3 = 0
+
+[node name="Background" type="TextureRect" parent="SubViewportContainer/SubViewport" index="0" unique_id=32766126]
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_omijg")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="DsMod" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background" index="0" unique_id=1503015403]
+position = Vector2(99.19699, 29.888346)
+scale = Vector2(0.15895402, 0.15895402)
+texture = ExtResource("4_t70vh")
+
+[node name="EyebrowRight" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/DsMod" index="0" unique_id=722849891]
+position = Vector2(-119.402954, 282.92474)
+scale = Vector2(0.4394652, 0.4394652)
+texture = ExtResource("5_5vbw2")
+hframes = 4
+vframes = 4
+
+[node name="EyebrowLeft" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/DsMod" index="1" unique_id=943070337]
+position = Vector2(23.925196, 290.09427)
+scale = Vector2(0.4394652, 0.4394652)
+texture = ExtResource("5_5vbw2")
+hframes = 4
+vframes = 4
+frame = 1
+
+[node name="EyeRight" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/DsMod" index="2" unique_id=1687755837]
+position = Vector2(-133.35303, 334.13232)
+scale = Vector2(0.4746623, 0.4746623)
+texture = ExtResource("5_5vbw2")
+hframes = 4
+vframes = 4
+frame = 14
+
+[node name="EyeRight2" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/DsMod" index="3" unique_id=842279749]
+position = Vector2(30.229004, 338.30762)
+scale = Vector2(0.48076594, 0.48076594)
+texture = ExtResource("5_5vbw2")
+hframes = 4
+vframes = 4
+frame = 15
+
+[node name="Mouth" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/DsMod" index="4" unique_id=860317057]
+position = Vector2(-45.277214, 491.41037)
+scale = Vector2(0.34350884, 0.34350884)
+texture = ExtResource("5_5vbw2")
+hframes = 2
+vframes = 4
+frame = 6

@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://brkykgsr08ltf"]
+[gd_scene format=3 uid="uid://cfoj4o2n6e4ig"]
 
-[ext_resource type="PackedScene" uid="uid://cosiljv6epx1" path="res://data/character_portrait.tscn" id="1_ovbqp"]
-[ext_resource type="Script" uid="uid://v2kfj3j4wufo" path="res://data/characters/scripts/pieter_teal.gd" id="2_rnulr"]
-[ext_resource type="Texture2D" uid="uid://bggc3xy7cvnjb" path="res://assets/Teal/Teal_back.png" id="3_e61lc"]
-[ext_resource type="Texture2D" uid="uid://dr6v1i68kpqy7" path="res://assets/Teal/Teal_blank.png" id="4_e61lc"]
-[ext_resource type="Texture2D" uid="uid://bfxsy2e1w2476" path="res://assets/Teal/teal_featuresheet.png" id="5_kmltc"]
+[ext_resource type="PackedScene" uid="uid://cosiljv6epx1" path="res://data/character_portrait.tscn" id="1_35i8y"]
+[ext_resource type="Script" uid="uid://v2kfj3j4wufo" path="res://data/characters/scripts/pieter_teal.gd" id="2_qhqwo"]
+[ext_resource type="Texture2D" uid="uid://bggc3xy7cvnjb" path="res://assets/Teal/Teal_back.png" id="3_qhvls"]
+[ext_resource type="Texture2D" uid="uid://dr6v1i68kpqy7" path="res://assets/Teal/Teal_blank.png" id="4_2ltna"]
+[ext_resource type="Texture2D" uid="uid://bfxsy2e1w2476" path="res://assets/Teal/teal_featuresheet.png" id="5_rf2mv"]
 
 [sub_resource type="Animation" id="Animation_fyyrn"]
 resource_name = "EyeThing"
@@ -323,8 +323,8 @@ _data = {
 &"thing": SubResource("Animation_w3yhx")
 }
 
-[node name="PieterTeal" unique_id=1095612352 instance=ExtResource("1_ovbqp")]
-script = ExtResource("2_rnulr")
+[node name="PieterTeal" unique_id=1095612352 instance=ExtResource("1_35i8y")]
+script = ExtResource("2_qhqwo")
 
 [node name="SubViewport" parent="SubViewportContainer" parent_id_path=PackedInt32Array(68375400) index="0" unique_id=424813258]
 canvas_item_default_texture_filter = 2
@@ -341,26 +341,26 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_e61lc")
+texture = ExtResource("3_qhvls")
 expand_mode = 3
 stretch_mode = 6
 
 [node name="Teal" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background" index="0" unique_id=1503015403]
 position = Vector2(98, 63.999992)
 scale = Vector2(0.134, 0.134)
-texture = ExtResource("4_e61lc")
+texture = ExtResource("4_2ltna")
 
 [node name="EyebrowRight" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Teal" index="0" unique_id=722849891]
 position = Vector2(-119.402954, -201.49207)
 scale = Vector2(0.915, 0.915)
-texture = ExtResource("5_kmltc")
+texture = ExtResource("5_rf2mv")
 hframes = 4
 vframes = 4
 
 [node name="EyebrowLeft" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Teal" index="1" unique_id=943070337]
 position = Vector2(119.403076, -201.49207)
 scale = Vector2(0.915, 0.915)
-texture = ExtResource("5_kmltc")
+texture = ExtResource("5_rf2mv")
 hframes = 4
 vframes = 4
 frame = 1
@@ -368,7 +368,7 @@ frame = 1
 [node name="EyeRight" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Teal" index="2" unique_id=1687755837]
 position = Vector2(-119.402954, -134.32776)
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("5_kmltc")
+texture = ExtResource("5_rf2mv")
 hframes = 4
 vframes = 4
 frame = 14
@@ -376,7 +376,7 @@ frame = 14
 [node name="EyeRight2" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Teal" index="3" unique_id=842279749]
 position = Vector2(111.94037, -134.32776)
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("5_kmltc")
+texture = ExtResource("5_rf2mv")
 hframes = 4
 vframes = 4
 frame = 15
@@ -384,7 +384,7 @@ frame = 15
 [node name="Mouth" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Teal" index="4" unique_id=860317057]
 position = Vector2(14.925415, 134.32886)
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("5_kmltc")
+texture = ExtResource("5_rf2mv")
 hframes = 2
 vframes = 4
 frame = 6

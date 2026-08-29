@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://brkykgsr08ltf"]
+
+[ext_resource type="PackedScene" uid="uid://cosiljv6epx1" path="res://data/character_portrait.tscn" id="1_ovbqp"]
+[ext_resource type="Script" uid="uid://v2kfj3j4wufo" path="res://data/characters/scripts/pieter_teal.gd" id="2_rnulr"]
+[ext_resource type="Texture2D" uid="uid://bboradgfcfxb7" path="res://assets/ds_mod/discord mod2 back.png" id="3_yd70p"]
+[ext_resource type="Texture2D" uid="uid://xpam1v2ebhn0" path="res://assets/ds_mod/discord mod.png" id="4_w3yhx"]
+[ext_resource type="Texture2D" uid="uid://s5ni6lnud5jw" path="res://assets/ds_mod/DsMod_featuresheet.png" id="5_w3yhx"]
+[ext_resource type="Texture2D" uid="uid://dghavis78x8ud" path="res://assets/ds_mod/discord mod2_vin.png" id="6_w3yhx"]
+[ext_resource type="Texture2D" uid="uid://bxbin054kisv7" path="res://assets/ds_mod/discord mod table.png" id="6_xm37t"]
+
+[node name="DsMod" unique_id=1095612352 instance=ExtResource("1_ovbqp")]
+script = ExtResource("2_rnulr")
+
+[node name="SubViewport" parent="SubViewportContainer" parent_id_path=PackedInt32Array(68375400) index="0" unique_id=424813258]
+canvas_item_default_texture_filter = 2
+positional_shadow_atlas_size = 0
+positional_shadow_atlas_quad_0 = 0
+positional_shadow_atlas_quad_1 = 0
+positional_shadow_atlas_quad_2 = 0
+positional_shadow_atlas_quad_3 = 0
+
+[node name="Background" type="TextureRect" parent="SubViewportContainer/SubViewport" index="0" unique_id=32766126]
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_yd70p")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="DsMod" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background" index="0" unique_id=1503015403]
+position = Vector2(98, 63.999992)
+scale = Vector2(0.14681648, 0.134)
+texture = ExtResource("4_w3yhx")
+
+[node name="EyebrowRight" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/DsMod" index="0" unique_id=722849891]
+position = Vector2(-148.20703, -414.60938)
+scale = Vector2(0.48328257, 0.48328257)
+texture = ExtResource("5_w3yhx")
+hframes = 4
+vframes = 4
+
+[node name="EyebrowLeft" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/DsMod" index="1" unique_id=943070337]
+position = Vector2(30.897675, -422.07227)
+scale = Vector2(0.48328257, 0.48328257)
+texture = ExtResource("5_w3yhx")
+hframes = 4
+vframes = 4
+frame = 1
+
+[node name="EyeRight" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/DsMod" index="2" unique_id=1687755837]
+position = Vector2(-150.34497, -327.37793)
+scale = Vector2(0.528437, 0.528437)
+texture = ExtResource("5_w3yhx")
+hframes = 4
+vframes = 4
+frame = 14
+
+[node name="EyeRight2" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/DsMod" index="3" unique_id=842279749]
+position = Vector2(44.77607, -328.3579)
+scale = Vector2(0.59526455, 0.59526455)
+texture = ExtResource("5_w3yhx")
+hframes = 4
+vframes = 4
+frame = 15
+
+[node name="Mouth" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/DsMod" index="4" unique_id=860317057]
+position = Vector2(-22.388039, -156.71635)
+scale = Vector2(0.6165887, 0.6522607)
+texture = ExtResource("5_w3yhx")
+hframes = 2
+vframes = 4
+frame = 6
+
+[node name="DiscordModTable2" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background" index="1" unique_id=1873597452]
+position = Vector2(98.25, 70.5)
+scale = Vector2(0.14644195, 0.0974026)
+texture = ExtResource("6_w3yhx")
+
+[node name="DiscordModTable" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background" index="2" unique_id=526558106]
+position = Vector2(97.99999, 42.999996)
+scale = Vector2(0.14681648, 0.14016813)
+texture = ExtResource("6_xm37t")
