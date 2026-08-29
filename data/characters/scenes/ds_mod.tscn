@@ -8,323 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://dghavis78x8ud" path="res://assets/ds_mod/discord mod2_vin.png" id="6_w3yhx"]
 [ext_resource type="Texture2D" uid="uid://bxbin054kisv7" path="res://assets/ds_mod/discord mod table.png" id="6_xm37t"]
 
-[sub_resource type="Animation" id="Animation_fyyrn"]
-resource_name = "EyeThing"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("EyeRight:scale")
-tracks/0/interp = 0
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.06666667, 0.16666667, 0.20000002, 0.53333336, 0.6, 0.6333333, 0.6666667),
-"transitions": PackedFloat32Array(4, 1, 6, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0.8, 0.8), Vector2(0.8, 1.005664), Vector2(0.8, 1.45), Vector2(0.8, 1.3559657), Vector2(0.8, 1.1692152), Vector2(0.8, 0.99611485), Vector2(0.8, 0.8)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("EyeRight2:scale")
-tracks/1/interp = 0
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.06666667, 0.16666667, 0.20000002, 0.53333336, 0.6, 0.6333333, 0.6666667),
-"transitions": PackedFloat32Array(4, 1, 6, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0.8, 0.8), Vector2(0.8, 1.005664), Vector2(0.8, 1.45), Vector2(0.8, 1.3559657), Vector2(0.8, 1.1692152), Vector2(0.8, 0.99611485), Vector2(0.8, 0.8)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("EyebrowRight:position")
-tracks/2/interp = 0
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.06666667, 0.16666667, 0.20000002, 0.73333335),
-"transitions": PackedFloat32Array(4, 1, 6, 1),
-"update": 0,
-"values": [Vector2(-119.402954, -201.49207), Vector2(-119.40297, -213.24812), Vector2(-119.403, -238.647), Vector2(-119.402954, -201.49207)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("EyebrowLeft:position")
-tracks/3/interp = 0
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.06666667, 0.16666667, 0.20000002, 0.73333335),
-"transitions": PackedFloat32Array(4, 1, 6, 1),
-"update": 0,
-"values": [Vector2(119.403076, -201.49207), Vector2(119.40305, -213.24812), Vector2(119.403, -238.647), Vector2(119.403076, -201.49207)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".:scale")
-tracks/4/interp = 0
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.1, 0.16666667, 0.2, 0.56666666, 0.6333333, 0.7, 0.76666665, 0.8333333, 0.9, 1),
-"transitions": PackedFloat32Array(-2, 1, 1, 1, 1, -2, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0.134, 0.134), Vector2(0.16441113, 0.16441113), Vector2(0.17310001, 0.17310001), Vector2(0.17650001, 0.17650001), Vector2(0.179, 0.179), Vector2(0.179, 0.179), Vector2(0.16735367, 0.16735367), Vector2(0.15570737, 0.15570737), Vector2(0.14905235, 0.14905235), Vector2(0.14477412, 0.14477412), Vector2(0.1387929, 0.1387929), Vector2(0.134, 0.134)]
-}
-
-[sub_resource type="Animation" id="Animation_kmltc"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("EyeRight:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [14]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("EyeRight2:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [15]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("EyeRight:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.8, 0.8)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("EyeRight2:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.8, 0.8)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("EyebrowRight:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-119.402954, -201.49207)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("EyebrowLeft:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(119.403076, -201.49207)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath(".:scale")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.134, 0.134)]
-}
-
-[sub_resource type="Animation" id="Animation_yd70p"]
-resource_name = "loop"
-length = 8.000003750566021
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("EyeRight:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.8666667, 2.0666666),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [14, 6, 14]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("EyeRight2:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.9333333, 2.1333332),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [15, 7, 15]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_w3yhx"]
-_data = {
-&"EyeThing": SubResource("Animation_fyyrn"),
-&"RESET": SubResource("Animation_kmltc"),
-&"loop": SubResource("Animation_yd70p")
-}
-
-[sub_resource type="Animation" id="Animation_xm37t"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Mouth:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(14.925415, 134.32886)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Mouth:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.8, 0.8)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Mouth:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(98, 63.999992)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_w3yhx"]
-resource_name = "thing"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Mouth:position")
-tracks/0/interp = 0
-tracks/0/loop_wrap = false
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.13333334, 0.16666669, 0.3, 0.33333334, 0.4, 0.46666667, 0.56666666, 0.6, 0.6666667),
-"transitions": PackedFloat32Array(-2, 1, 1, 1, 1, 1, 1, 1, 0.5, 1, 1, 1),
-"update": 0,
-"values": [Vector2(14.925415, 134.32886), Vector2(13.028623, 158.52072), Vector2(3.7313232, 187.65381), Vector2(-60.256035, 162.18295), Vector2(-82.08958, 141.79112), Vector2(53.971092, 124.146835), Vector2(74.62684, 134.32843), Vector2(49.258575, 184.13667), Vector2(-2.2888184e-05, 231.34335), Vector2(-9.439386, 197.95647), Vector2(3.1492977, 159.5543), Vector2(14.925415, 134.32886)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Mouth:scale")
-tracks/1/interp = 0
-tracks/1/loop_wrap = false
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.13333334, 0.16666669, 0.3, 0.33333334, 0.46666667, 0.56666666, 0.6),
-"transitions": PackedFloat32Array(2, 1, 1, 1, 1, 1, 1, 0.5, 1, 1),
-"update": 0,
-"values": [Vector2(0.8, 0.8), Vector2(0.7348239, 0.797171), Vector2(0.5392955, 0.78868407), Vector2(0.42754966, 0.78868407), Vector2(0.37167674, 0.78868407), Vector2(0.37167674, 0.78868407), Vector2(0.37167674, 0.78868407), Vector2(0.37167674, 0.78868407), Vector2(0.6458037, 0.7959263), Vector2(0.8, 0.8)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Mouth:rotation")
-tracks/2/interp = 0
-tracks/2/loop_wrap = false
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.13333334, 0.16666669, 0.3, 0.33333334, 0.4, 0.46666667, 0.56666666, 0.6333333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 0.5, 1, 1),
-"update": 0,
-"values": [0.0, 0.11103086, 0.12391838, 0.017271155, 0.0, 0.015082694, 0.0418879, 0.0075658057, 0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:position")
-tracks/3/interp = 0
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.76666665, 0.8, 0.8333333, 0.8666667, 0.9, 0.93333334, 1),
-"transitions": PackedFloat32Array(0, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(98, 63.999992), Vector2(76.84, 77.77), Vector2(83.53, 73.06), Vector2(79.51599, 75.886), Vector2(81.522995, 74.473), Vector2(79.96199, 75.572), Vector2(79.96199, 75.572), Vector2(98, 63.999992)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".:rotation")
-tracks/4/interp = 0
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.76666665, 0.8, 0.8333333, 0.8666667, 0.9, 0.93333334, 1),
-"transitions": PackedFloat32Array(0, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, -0.3019419605950192, -0.13439035240356317, -0.23492138, -0.18465582, -0.22375126, -0.22375126, 0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_xm37t"]
-_data = {
-&"RESET": SubResource("Animation_xm37t"),
-&"thing": SubResource("Animation_w3yhx")
-}
-
 [node name="DsMod" unique_id=1095612352 instance=ExtResource("1_ovbqp")]
 script = ExtResource("2_rnulr")
 
@@ -349,57 +32,47 @@ stretch_mode = 6
 
 [node name="DsMod" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background" index="0" unique_id=1503015403]
 position = Vector2(98, 63.999992)
-scale = Vector2(0.134, 0.134)
+scale = Vector2(0.14681648, 0.134)
 texture = ExtResource("4_w3yhx")
 
 [node name="EyebrowRight" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/DsMod" index="0" unique_id=722849891]
-position = Vector2(-119.402954, -201.49207)
-scale = Vector2(0.6495028, 0.6495028)
+position = Vector2(-148.20703, -414.60938)
+scale = Vector2(0.48328257, 0.48328257)
 texture = ExtResource("5_w3yhx")
 hframes = 4
 vframes = 4
 
 [node name="EyebrowLeft" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/DsMod" index="1" unique_id=943070337]
-position = Vector2(119.403076, -201.49207)
-scale = Vector2(0.6495028, 0.6495028)
+position = Vector2(30.897675, -422.07227)
+scale = Vector2(0.48328257, 0.48328257)
 texture = ExtResource("5_w3yhx")
 hframes = 4
 vframes = 4
 frame = 1
 
 [node name="EyeRight" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/DsMod" index="2" unique_id=1687755837]
-position = Vector2(-151.00574, -320.89557)
-scale = Vector2(0.8, 0.8)
+position = Vector2(-150.34497, -327.37793)
+scale = Vector2(0.528437, 0.528437)
 texture = ExtResource("5_w3yhx")
 hframes = 4
 vframes = 4
 frame = 14
 
 [node name="EyeRight2" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/DsMod" index="3" unique_id=842279749]
-position = Vector2(46.799835, -328.35742)
-scale = Vector2(0.8, 0.8)
+position = Vector2(44.77607, -328.3579)
+scale = Vector2(0.59526455, 0.59526455)
 texture = ExtResource("5_w3yhx")
 hframes = 4
 vframes = 4
 frame = 15
 
 [node name="Mouth" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/DsMod" index="4" unique_id=860317057]
-position = Vector2(14.925415, 134.32886)
-scale = Vector2(0.8, 0.8)
+position = Vector2(-22.388039, -156.71635)
+scale = Vector2(0.6165887, 0.6522607)
 texture = ExtResource("5_w3yhx")
 hframes = 2
 vframes = 4
 frame = 6
-
-[node name="BlinkCycle" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/Background/DsMod" index="5" unique_id=2045294401]
-libraries/ = SubResource("AnimationLibrary_w3yhx")
-autoplay = &"loop"
-
-[node name="MouthThing" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/Background/DsMod" index="6" unique_id=737616105]
-libraries/ = SubResource("AnimationLibrary_xm37t")
-
-[node name="MouthThingTimer" type="Timer" parent="SubViewportContainer/SubViewport/Background/DsMod/MouthThing" index="0" unique_id=124600231]
-wait_time = 20.0
 
 [node name="DiscordModTable2" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background" index="1" unique_id=1873597452]
 position = Vector2(98.25, 70.5)
@@ -410,6 +83,3 @@ texture = ExtResource("6_w3yhx")
 position = Vector2(97.99999, 42.999996)
 scale = Vector2(0.14681648, 0.14016813)
 texture = ExtResource("6_xm37t")
-
-[connection signal="animation_finished" from="SubViewportContainer/SubViewport/Background/DsMod/BlinkCycle" to="." method="_on_blink_cycle_finished"]
-[connection signal="timeout" from="SubViewportContainer/SubViewport/Background/DsMod/MouthThing/MouthThingTimer" to="." method="_on_mouth_thing_timeout"]
