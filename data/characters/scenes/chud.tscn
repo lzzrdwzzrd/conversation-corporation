@@ -16,6 +16,68 @@ shader_parameter/color_steps = 13.0
 shader_parameter/grain_amount = 0.08
 shader_parameter/frame_rate = 20.0
 
+[sub_resource type="Animation" id="Animation_r3sqf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/Background/Chud/EyeRight:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [14]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/Background/Chud/EyeRight2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [15]
+}
+
+[sub_resource type="Animation" id="Animation_uqd5o"]
+resource_name = "loop"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/Background/Chud/EyeRight:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.2333333, 3.6333337),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [14, 6, 14]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/Background/Chud/EyeRight2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.2333333, 3.6100001),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [15, 7, 15]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sbqqi"]
+_data = {
+&"RESET": SubResource("Animation_r3sqf"),
+&"loop": SubResource("Animation_uqd5o")
+}
+
 [node name="Chud" unique_id=1095612352 instance=ExtResource("1_goub1")]
 script = null
 
@@ -89,3 +151,8 @@ frame = 6
 position = Vector2(-3.4054565, 41.04483)
 scale = Vector2(1.0381626, 1.2685082)
 texture = ExtResource("6_f4tcv")
+
+[node name="BlinkCycle" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/Background/Chud" index="6" unique_id=1170234808]
+root_node = NodePath("../../../../..")
+libraries/ = SubResource("AnimationLibrary_sbqqi")
+autoplay = &"loop"

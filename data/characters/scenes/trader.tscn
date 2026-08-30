@@ -16,6 +16,68 @@ shader_parameter/color_steps = 10.7690001315275
 shader_parameter/grain_amount = 0.10000000149012
 shader_parameter/frame_rate = 20.0
 
+[sub_resource type="Animation" id="Animation_p3udm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EyeRight:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [14]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EyeRight2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [15]
+}
+
+[sub_resource type="Animation" id="Animation_vrxue"]
+resource_name = "loop"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EyeRight:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.5333333, 5.8333335),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [14, 6, 14]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EyeRight2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4.5333333, 5.8166666),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [15, 7, 15]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p3udm"]
+_data = {
+&"RESET": SubResource("Animation_p3udm"),
+&"loop": SubResource("Animation_vrxue")
+}
+
 [node name="Trader" unique_id=1095612352 instance=ExtResource("1_6nlg1")]
 script = null
 
@@ -89,3 +151,7 @@ frame = 6
 position = Vector2(-1.4305115e-06, 3.0517578e-05)
 scale = Vector2(0.9809694, 0.9009899)
 texture = ExtResource("6_muxud")
+
+[node name="BlinkCycle" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/Background/Businessman" index="6" unique_id=1375505603]
+libraries/ = SubResource("AnimationLibrary_p3udm")
+autoplay = &"loop"

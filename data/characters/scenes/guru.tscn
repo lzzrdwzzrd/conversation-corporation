@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://j8f21pv2lfdo" path="res://assets/guru/guru_bg.png" id="3_4822n"]
 [ext_resource type="Shader" uid="uid://cmhj1spw5tq7p" path="res://shaders/portraits.gdshader" id="3_bhxhd"]
 [ext_resource type="Texture2D" uid="uid://ccywgiit2nwv8" path="res://assets/guru/guru_blank.png" id="4_1smqt"]
-[ext_resource type="Texture2D" uid="uid://b6pwedbuvvqht" path="res://assets/guru/guru_featuresheet.png" id="5_bhxhd"]
-[ext_resource type="Texture2D" uid="uid://bfxsy2e1w2476" path="res://assets/teal/teal_featuresheet.png" id="7_bhxhd"]
+[ext_resource type="Texture2D" uid="uid://b6pwedbuvvqht" path="res://assets/guru/Guru_featuresheet.png" id="5_bhxhd"]
+[ext_resource type="Texture2D" uid="uid://bfxsy2e1w2476" path="res://assets/Teal/teal_featuresheet.png" id="7_bhxhd"]
 [ext_resource type="Shader" uid="uid://b3hy0w28toon8" path="res://shaders/hueshift.gdshader" id="7_tj6w4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tj6w4"]
@@ -20,6 +20,68 @@ shader_parameter/frame_rate = 20.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bhxhd"]
 shader = ExtResource("7_tj6w4")
 shader_parameter/shift_amount = 196.0
+
+[sub_resource type="Animation" id="Animation_tj6w4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EyeRight2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [15]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EyeRight:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [14]
+}
+
+[sub_resource type="Animation" id="Animation_dq23o"]
+resource_name = "loop"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EyeRight2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [15]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EyeRight:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5.736666, 6.1666665),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [14, 6, 14]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_muftr"]
+_data = {
+&"RESET": SubResource("Animation_tj6w4"),
+&"loop": SubResource("Animation_dq23o")
+}
 
 [node name="Guru" unique_id=1095612352 instance=ExtResource("1_4822n")]
 script = null
@@ -89,3 +151,7 @@ texture = ExtResource("7_bhxhd")
 hframes = 2
 vframes = 4
 frame = 6
+
+[node name="BlinkCycle" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/Background/Guru" index="5" unique_id=988524693]
+libraries/ = SubResource("AnimationLibrary_muftr")
+autoplay = &"loop"
