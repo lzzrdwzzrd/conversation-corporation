@@ -41,11 +41,132 @@ tracks/1/keys = {
 "update": 1,
 "values": [14]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(155.19699, -10.111659)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.26732847, 0.26732847)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("EyeRight:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.4746623, 0.4746623)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("EyeRight2:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.48076594, 0.48076594)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("EyebrowRight:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-119.402954, 282.92474)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("EyebrowRight:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("EyebrowLeft:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(23.925196, 290.09427)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("EyebrowLeft:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Mouth:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-45.277214, 491.41037)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Mouth:scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.34350884, 0.34350884)]
+}
 
 [sub_resource type="Animation" id="Animation_f4m4k"]
 resource_name = "loop"
-length = 8.0
+length = 16.0
 loop_mode = 1
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -53,10 +174,10 @@ tracks/0/path = NodePath("EyeRight2:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.7333333, 2.15, 5.1666665, 5.666667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1.7333333, 2.15, 5.1666665, 5.3, 8.466666, 8.6, 9.500001, 9.6, 9.700001, 9.8, 12.473333, 12.6066675, 13.84, 13.973334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [15, 7, 15, 7, 15]
+"values": [15, 7, 15, 7, 15, 7, 15, 7, 15, 7, 15, 7, 15, 7, 15]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -65,10 +186,130 @@ tracks/1/path = NodePath("EyeRight:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.7, 2.1333334, 5.16, 5.633333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1.7, 2.1333334, 5.16, 5.3, 8.466666, 8.6, 9.500001, 9.6, 9.700001, 9.8, 12.466667, 12.6066675, 13.833334, 13.973334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [14, 6, 14, 6, 14]
+"values": [14, 6, 14, 6, 14, 6, 14, 6, 14, 6, 14, 6, 14, 6, 14]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 7.9, 8, 8.1, 8.3, 8.5, 8.6, 8.9, 9.1, 9.2, 9.4, 9.633333, 9.8, 9.9, 10.1, 10.3, 10.5, 10.6, 10.7, 10.8, 10.9, 11, 11.1, 11.200001),
+"transitions": PackedFloat32Array(1, 0.5, 1, 1, 1, 1, 2, 1, 1, 1, 1, 0.5, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(155.19699, -10.111659), Vector2(155.19699, -10.111659), Vector2(140.34698, -40.80166), Vector2(135.39697, -51.031693), Vector2(132.92198, -56.146675), Vector2(125.49698, -71.49167), Vector2(125.19698, -72.111664), Vector2(124.45133, -73.85949), Vector2(123.12573, -76.96675), Vector2(120.79558, -82.42873), Vector2(119.63051, -85.159706), Vector2(116.912, -91.532), Vector2(114.39154, -88.17705), Vector2(111.15097, -83.86358), Vector2(109.85474, -82.13818), Vector2(108.3081, -80.079475), Vector2(107.6207, -79.16449), Vector2(107.277, -78.707), Vector2(126.8443, -50.697266), Vector2(133.36676, -41.360657), Vector2(136.62796, -36.692394), Vector2(146.41162, -22.687515), Vector2(153.86586, -12.017105), Vector2(155.19699, -10.111659)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:scale")
+tracks/3/interp = 0
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 7.9, 8.1, 8.3, 8.5, 8.7, 8.8, 9.1, 9.2, 9.3, 9.5, 9.6, 9.8, 9.9, 10, 10.133333, 10.4, 10.7, 10.8, 10.9, 11, 11.1, 11.200001),
+"transitions": PackedFloat32Array(1, -2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 1, -3, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.26732847, 0.26732847), Vector2(0.26732847, 0.26732847), Vector2(0.31199157, 0.31199157), Vector2(0.31837204, 0.31837204), Vector2(0.3438938, 0.3438938), Vector2(0.36941552, 0.36941552), Vector2(0.372, 0.372), Vector2(0.37214464, 0.37214464), Vector2(0.37252432, 0.37252432), Vector2(0.37290403, 0.37290403), Vector2(0.37377188, 0.37377188), Vector2(0.37901843, 0.37901843), Vector2(0.38951153, 0.38951153), Vector2(0.37333795, 0.37333795), Vector2(0.40000463, 0.40000463), Vector2(0.407, 0.407), Vector2(0.38180968, 0.38180968), Vector2(0.372, 0.372), Vector2(0.36824724, 0.36824724), Vector2(0.3644946, 0.3644946), Vector2(0.32133898, 0.32133898), Vector2(0.270678, 0.270678), Vector2(0.26732847, 0.26732847)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("EyeRight:scale")
+tracks/4/interp = 0
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 8.5, 8.6, 10.766667, 10.866667),
+"transitions": PackedFloat32Array(-2, -2, 1, 1, -2),
+"update": 0,
+"values": [Vector2(0.4746623, 0.4746623), Vector2(0.4746623, 0.4746623), Vector2(0.475, 0.22), Vector2(0.475, 0.22), Vector2(0.4746623, 0.4746623)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("EyeRight2:scale")
+tracks/5/interp = 0
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 8.5, 8.6, 10.766667, 10.866667),
+"transitions": PackedFloat32Array(-2, -2, 1, 1, -2),
+"update": 0,
+"values": [Vector2(0.48076594, 0.48076594), Vector2(0.48076594, 0.48076594), Vector2(0.481, 0.226), Vector2(0.481, 0.226), Vector2(0.48076594, 0.48076594)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("EyebrowRight:position")
+tracks/6/interp = 0
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 8.4, 8.6, 8.7, 10.699999, 10.8, 10.9),
+"transitions": PackedFloat32Array(-2, -2, 1, 1, 1, 1, -2),
+"update": 0,
+"values": [Vector2(-119.402954, 282.92474), Vector2(-119.402954, 282.92474), Vector2(-119.403046, 265.46832), Vector2(-119.403076, 260.48083), Vector2(-119.403076, 260.48083), Vector2(-119.403015, 271.70288), Vector2(-119.402954, 282.92474)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("EyebrowRight:rotation")
+tracks/7/interp = 0
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 8.4, 8.5, 10.8, 10.9),
+"transitions": PackedFloat32Array(-2, -2, 1, 1, -2),
+"update": 0,
+"values": [0.0, 0.0, -0.36651915, -0.36651915, 0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("EyebrowLeft:position")
+tracks/8/interp = 0
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 8.4, 8.6, 8.7, 10.7, 10.8, 10.9),
+"transitions": PackedFloat32Array(-2, -2, 1, 1, 1, 1, -2),
+"update": 0,
+"values": [Vector2(23.925196, 290.09427), Vector2(23.925196, 290.09427), Vector2(23.9252, 266.81897), Vector2(23.925201, 260.16895), Vector2(23.925201, 260.16895), Vector2(23.925198, 275.13168), Vector2(23.925196, 290.09427)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("EyebrowLeft:rotation")
+tracks/9/interp = 0
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 8.4, 8.5, 10.8, 10.9),
+"transitions": PackedFloat32Array(-2, -2, 1, 1, -2),
+"update": 0,
+"values": [0.0, 0.0, 0.3700098, 0.3700098, 0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Mouth:position")
+tracks/10/interp = 0
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 8.5, 8.6, 10.8, 10.933333),
+"transitions": PackedFloat32Array(1, -2, 1, -2, 1),
+"update": 0,
+"values": [Vector2(-45.277214, 491.41037), Vector2(-45.277214, 491.41037), Vector2(-45.277, 514.2), Vector2(-45.277, 514.2), Vector2(-45.277214, 491.41037)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Mouth:scale")
+tracks/11/interp = 0
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 8.5, 8.6, 10.8, 10.933333),
+"transitions": PackedFloat32Array(1, -2, 1, -2, 1),
+"update": 0,
+"values": [Vector2(0.34350884, 0.34350884), Vector2(0.34350884, 0.34350884), Vector2(0.234, 0.169), Vector2(0.234, 0.169), Vector2(0.34350884, 0.34350884)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y4jxb"]
@@ -78,7 +319,9 @@ _data = {
 }
 
 [node name="Gran" unique_id=1095612352 instance=ExtResource("1_l0qdg")]
-script = null
+full_name = "Fahriye Demirci"
+camera_label = "User (gPhone 3N Front camera #0)"
+age = 78
 
 [node name="SubViewportContainer" parent="." index="0" unique_id=68375400]
 material = SubResource("ShaderMaterial_f4m4k")

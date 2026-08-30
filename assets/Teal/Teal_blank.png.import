@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dr6v1i68kpqy7"
-path="res://.godot/imported/Teal_blank.png-a9ff3a24cf42138f2df9acffecad0046.ctex"
+path="res://.godot/imported/teal_blank.png-ac943dc36078f68fa4910a8ed972f91c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Teal/Teal_blank.png"
-dest_files=["res://.godot/imported/Teal_blank.png-a9ff3a24cf42138f2df9acffecad0046.ctex"]
+source_file="res://assets/teal/teal_blank.png"
+dest_files=["res://.godot/imported/teal_blank.png-ac943dc36078f68fa4910a8ed972f91c.ctex"]
 
 [params]
 

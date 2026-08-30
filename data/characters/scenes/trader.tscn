@@ -54,10 +54,10 @@ tracks/0/path = NodePath("EyeRight:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 4.5333333, 5.8333335),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 4.5333333, 4.633333, 7.3, 7.4333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [14, 6, 14]
+"values": [14, 6, 14, 6, 14]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -66,10 +66,10 @@ tracks/1/path = NodePath("EyeRight2:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 4.5333333, 5.8166666),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 4.5333333, 4.6166663, 7.3, 7.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [15, 7, 15]
+"values": [15, 7, 15, 7, 15]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p3udm"]
@@ -79,7 +79,9 @@ _data = {
 }
 
 [node name="Trader" unique_id=1095612352 instance=ExtResource("1_6nlg1")]
-script = null
+full_name = "Trevor M. Coughlin"
+camera_label = "User (gBook built-in camera)"
+age = 28
 
 [node name="SubViewportContainer" parent="." index="0" unique_id=68375400]
 material = SubResource("ShaderMaterial_hwwe2")

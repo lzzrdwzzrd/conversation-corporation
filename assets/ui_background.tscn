@@ -55,11 +55,19 @@ variation_opentype = {
 [sub_resource type="LabelSettings" id="LabelSettings_axu3h"]
 font_size = 21
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twwdp"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 8.0
+expand_margin_right = 13.0
+
 [node name="Background" type="Node2D" unique_id=2011888884]
 
 [node name="Panel4" type="Panel" parent="." unique_id=1592416595]
 offset_left = 232.0
-offset_top = 36.0
 offset_right = 922.0
 offset_bottom = 534.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_j5wjh")
@@ -72,6 +80,7 @@ offset_bottom = 648.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_vef74")
 
 [node name="Panel5" type="Panel" parent="." unique_id=1012632846]
+visible = false
 offset_left = 232.0
 offset_right = 921.0
 offset_bottom = 40.0
@@ -118,13 +127,14 @@ rporation"
 label_settings = SubResource("LabelSettings_g4v7s")
 
 [node name="Label4" type="Label" parent="." unique_id=2014921810]
-offset_left = 157.0
+offset_left = 102.0
 offset_top = 14.0
 offset_right = 221.0
 offset_bottom = 29.0
 theme_override_fonts/font = SubResource("FontVariation_shvi5")
-text = "Internal portal"
+text = "Internal access only"
 label_settings = SubResource("LabelSettings_yf5fn")
+horizontal_alignment = 2
 
 [node name="Label" type="Label" parent="." unique_id=1749560465]
 offset_left = 14.0
@@ -134,3 +144,10 @@ offset_bottom = 35.0
 theme_override_fonts/font = SubResource("FontVariation_axu3h")
 text = "BurbleAI"
 label_settings = SubResource("LabelSettings_axu3h")
+
+[node name="PanelContainer2" type="PanelContainer" parent="." unique_id=887562531]
+custom_minimum_size = Vector2(653, 32)
+custom_maximum_size = Vector2(653, -1)
+propagate_maximum_size = false
+clip_contents = true
+theme_override_styles/panel = SubResource("StyleBoxFlat_twwdp")

@@ -1,39 +1,79 @@
 extends Control
 
+const MESSAGE_UI = preload("uid://blo88av83s2hf")
+const MESSAGE_DATA = preload("uid://crs07133xthwa")
+
+const agendas = [
+	"teal", # perception of the founder and burbleai
+	"surveillance", # denial of mass surveillance
+	"climate", # denial of contribution to climate change
+	"trading", # denial of market manipulation and insider trading
+	"air", # denial of air pollution
+	"lobbying", # denial of unelected government influence
+	"healthcare", # affirmation of quality of healthcare, denial of corruption
+	"image", # perception of the chatbot itself
+	"weasel", # deflection and evasion of responsibility
+]
+
 @export var locked_color : Color = Color(0.5, 0.5, 0.5)
 
-@onready var text_input: RichTextLabel = $HBoxContainer/MainChatArea/VBoxContainer/PanelContainer/TextInput
+@onready var text_input: RichTextLabel = $HBoxContainer/MainChatArea/VBoxContainer/PanelContainer/HBoxContainer/TextInput
 @onready var option_buttons: HFlowContainer = $HBoxContainer/MainChatArea/VBoxContainer/Buttons
 @onready var qs_buffer_clear_timer: Timer = $QsBufferClearTimer
-@onready var pending_chats: VBoxContainer = $HBoxContainer/ChatDrawer/Levels/AwaitingResponse # if !level.get_child(-1).is_from_player
-@onready var idle_chats: VBoxContainer = $HBoxContainer/ChatDrawer/Levels/Idle
-@onready var button_template: Button = $HBoxContainer/ChatDrawer/Levels/ButtonTemplate # duplicate this into pending_chats and idle_chats whenever needed
+@onready var pending_chats: VBoxContainer = $HBoxContainer/ChatDrawer/ScrollContainer/Levels/AwaitingResponse # if !level.get_child(-1).is_from_player
+@onready var idle_chats: VBoxContainer = $HBoxContainer/ChatDrawer/ScrollContainer/Levels/Idle
+@onready var button_template: Button = $HBoxContainer/ChatDrawer/ScrollContainer/Levels/ButtonTemplate # duplicate this into pending_chats and idle_chats whenever needed
 @onready var levels: Node = $Levels
 @onready var main_vbox: VBoxContainer = $HBoxContainer/MainChatArea/VBoxContainer
 @onready var empty_label: Label = $HBoxContainer/MainChatArea/EmptyLabel
+@onready var messages: VBoxContainer = $HBoxContainer/MainChatArea/VBoxContainer/Messages
+@onready var send_button: Button = $HBoxContainer/MainChatArea/VBoxContainer/PanelContainer/HBoxContainer/SendButton
+
+@onready var user_portrait: Control = $UserPortrait
+@onready var name_label: Label = $UserPortrait/NameLabel
+@onready var camera_label: Label = $UserPortrait/CameraLabel
+var active_portrait : Control
 
 var current_message : Array[Dictionary] = [
 	{ word = "", pos = "start", tags = [], flags = {} }
 ]
+
 var context_start := 1
 var active_level : Node
 var current_options : Array[Dictionary] = []
 var quick_select_buffer : String
 var backspaces_available := 3
-var is_input_locked := false
+var is_input_locked := false:
+	set(value):
+		is_input_locked = value
+
+		if value:
+			text_input.text = "[color=#808080]Nothing to reply to...[/color]"
+			option_buttons.hide()
+		else:
+			_render_message(current_message)
+			option_buttons.show()
 
 var levels_completed := 0
 
 func _ready() -> void:
-	if levels.get_child_count():
-		_on_level_selected(levels.get_child(0))
-	else:
-		_generate_options()
-		_render_message(current_message)
+	_set_level_buttons()
+	empty_label.show()
+	main_vbox.hide()
 
 func capitalize(word: String) -> String:
 	var trimmed : String = word.strip_edges()
 	return (" " if word.begins_with(" ") else "") + trimmed[0].to_upper() + trimmed.substr(1)
+
+func strip_bbcode(source:String) -> String:
+	var regex = RegEx.new()
+	regex.compile("\\[.+?\\]")
+	return regex.sub(source, "", true)
+
+func _set_can_send(can_send: bool) -> void:
+	send_button.disabled = !can_send
+	send_button.mouse_default_cursor_shape = Control.CURSOR_FORBIDDEN if !can_send else Control.CURSOR_POINTING_HAND
+	send_button.tooltip_text = "Your message is too short!" if !can_send else ""
 
 func _render_message(tokens: Array[Dictionary]) -> void:
 	var text := ""
@@ -50,7 +90,7 @@ func _render_message(tokens: Array[Dictionary]) -> void:
 		if should_capitalize and token.pos != "jargon":
 			word = capitalize(word)
 
-		should_capitalize = token.pos == "period"
+		should_capitalize = token.pos in ["period", "jargon_sentence"]
 
 		text += word
 
@@ -65,6 +105,16 @@ func _generate_options() -> void:
 
 	var viable_templates := _get_viable_templates()
 	var next_positions: Array[String] = []
+	var token_biases := {}
+
+	for token in active_level.vocabulary_biases:
+		token_biases[token] = 3.0
+
+	for tag in current_message[-1]:
+		if tag.begins_with("bias:"):
+			var parts : Array = tag.split(":", false, 1)
+			if parts.size() == 2:
+				token_biases[parts[1]] = 4.0
 
 	for template in viable_templates:
 		var index := current_message.size() - context_start
@@ -165,6 +215,7 @@ func _on_option_selected(index: int) -> void:
 
 	var selected_token : Dictionary = current_options[index]
 	current_message.append(selected_token)
+	_set_can_send(current_message.size() > 3)
 	backspaces_available = min(3, backspaces_available + 1)
 
 	if selected_token.pos in ["period", "jargon_sentence"]:
@@ -175,7 +226,7 @@ func _on_option_selected(index: int) -> void:
 
 func _set_option_buttons(options: Array[Dictionary]) -> void:
 	var buttons_needed : int = options.size()
-	var should_capitalize : bool = current_message[-1].pos in ["period", "start"]
+	var should_capitalize : bool = current_message[-1].pos in ["period", "start", "jargon_sentence"]
 
 	if buttons_needed > option_buttons.get_child_count():
 		for i in range(option_buttons.get_child_count(), buttons_needed):
@@ -213,7 +264,7 @@ func _set_level_buttons() -> void:
 
 		var button : Button = button_template.duplicate()
 		button.text = level.chat_name
-		button.button_pressed = level.chat_name == active_level.chat_name
+		button.button_pressed = active_level and level.chat_name == active_level.chat_name
 		button.disabled = button.button_pressed
 
 		if level.is_pending():
@@ -226,12 +277,18 @@ func _set_level_buttons() -> void:
 		if !button.button_pressed:
 			button.pressed.connect(_on_level_selected.bind(level))
 
-	pending_chats.visible = pending_chats.get_child_count() > 0
-	idle_chats.visible = idle_chats.get_child_count() > 0
+	$HBoxContainer/ChatDrawer/ScrollContainer/Levels/Separator.visible = pending_chats.get_child_count() > 0
+	$HBoxContainer/ChatDrawer/ScrollContainer/Levels/Separator2.visible = idle_chats.get_child_count() > 0
 
 func _on_level_selected(level: Node) -> void:
 	if active_level and active_level.chat_name == level.chat_name:
 		return
+
+	if active_level:
+		active_level.draft = current_message.duplicate()
+		active_level.options = current_options.duplicate()
+		active_level.context_start = context_start
+		active_level.backspaces_available = backspaces_available
 
 	active_level = level
 	current_message = level.draft.duplicate()
@@ -239,6 +296,18 @@ func _on_level_selected(level: Node) -> void:
 	context_start = level.context_start
 	backspaces_available = level.backspaces_available
 	is_input_locked = !level.is_pending()
+	_set_can_send(!is_input_locked and current_message.size() > 3)
+
+	empty_label.hide()
+	main_vbox.show()
+	_render_messages()
+
+	if active_portrait: active_portrait.queue_free()
+	active_portrait = level.user.instantiate()
+	user_portrait.add_child(active_portrait)
+	name_label.text = "%s, %d" % [active_portrait.full_name, active_portrait.age]
+	camera_label.text = active_portrait.camera_label
+	$HBoxContainer/MainChatArea/VBoxContainer/PanelContainer2/HBoxContainer/Agenda.text = "AGENDA: %s" % level.agenda_message
 
 	if !is_input_locked:
 		_render_message(current_message)
@@ -248,6 +317,49 @@ func _on_level_selected(level: Node) -> void:
 			_set_option_buttons(current_options)
 
 	_set_level_buttons()
+
+func _render_messages() -> void:
+	for child in messages.get_children():
+		child.queue_free()
+
+	for message in active_level.get_children():
+		var message_instance : Control = MESSAGE_UI.instantiate()
+		message_instance.text = message.text_content
+
+		message_instance.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN if message.is_from_player else Control.SIZE_SHRINK_END
+		message_instance.get_node("NinePatchRect").offset_transform_scale = Vector2.ONE if message.is_from_player else Vector2(-1, 1)
+		message_instance.get_node("AuthorRight").visible = message.is_from_player
+		message_instance.get_node("AuthorLeft").visible = !message.is_from_player
+
+		messages.add_child(message_instance)
+
+func _submit_answer() -> void:
+	if is_input_locked or !active_level:
+		return
+
+	var message_data_instance : Node = MESSAGE_DATA.instantiate()
+	message_data_instance.is_from_player = true
+	message_data_instance.text_content = strip_bbcode(text_input.text.strip_edges())
+
+	active_level.add_child(message_data_instance)
+
+	_render_messages()
+	_set_can_send(false)
+
+	current_message = [{ word = "", pos = "start", tags = [], flags = {} }]
+	active_level.options.clear()
+	active_level.context_start = 1
+	active_level.backspaces_available = 3
+	active_level.draft = current_message.duplicate()
+
+	current_options.clear()
+	_set_option_buttons(current_options)
+
+	context_start = 1
+	active_level.backspaces_available = 3
+	is_input_locked = true
+
+	levels_completed += 1
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
@@ -278,3 +390,9 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_qs_buffer_clear_timeout() -> void:
 	quick_select_buffer = ""
+
+func _on_send_button_pressed() -> void:
+	if is_input_locked or !active_level or current_message.size() <= 3:
+		return
+
+	_submit_answer()

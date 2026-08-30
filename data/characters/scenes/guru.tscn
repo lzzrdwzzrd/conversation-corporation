@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://j8f21pv2lfdo" path="res://assets/guru/guru_bg.png" id="3_4822n"]
 [ext_resource type="Shader" uid="uid://cmhj1spw5tq7p" path="res://shaders/portraits.gdshader" id="3_bhxhd"]
 [ext_resource type="Texture2D" uid="uid://ccywgiit2nwv8" path="res://assets/guru/guru_blank.png" id="4_1smqt"]
-[ext_resource type="Texture2D" uid="uid://b6pwedbuvvqht" path="res://assets/guru/Guru_featuresheet.png" id="5_bhxhd"]
-[ext_resource type="Texture2D" uid="uid://bfxsy2e1w2476" path="res://assets/Teal/teal_featuresheet.png" id="7_bhxhd"]
+[ext_resource type="Texture2D" uid="uid://b6pwedbuvvqht" path="res://assets/guru/guru_featuresheet.png" id="5_bhxhd"]
+[ext_resource type="Texture2D" uid="uid://bfxsy2e1w2476" path="res://assets/teal/teal_featuresheet.png" id="7_bhxhd"]
 [ext_resource type="Shader" uid="uid://b3hy0w28toon8" path="res://shaders/hueshift.gdshader" id="7_tj6w4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tj6w4"]
@@ -71,7 +71,7 @@ tracks/1/path = NodePath("EyeRight:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 5.736666, 6.1666665),
+"times": PackedFloat32Array(0, 5.736666, 5.9666667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [14, 6, 14]
@@ -84,7 +84,6 @@ _data = {
 }
 
 [node name="Guru" unique_id=1095612352 instance=ExtResource("1_4822n")]
-script = null
 
 [node name="SubViewportContainer" parent="." index="0" unique_id=68375400]
 material = SubResource("ShaderMaterial_tj6w4")

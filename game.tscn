@@ -5,7 +5,11 @@
 [ext_resource type="FontFile" uid="uid://uxbxo10p6xe6" path="res://fonts/IntelOneMono.ttf" id="2_feb5d"]
 [ext_resource type="PackedScene" uid="uid://dpkmlrwhi3n18" path="res://assets/ui_background.tscn" id="3_eow3j"]
 [ext_resource type="PackedScene" uid="uid://2tvo7037aw3o" path="res://data/levels/level0-test.tscn" id="4_j5wjh"]
+[ext_resource type="PackedScene" uid="uid://cjor45ewowfyt" path="res://data/characters/scenes/gran.tscn" id="5_eow3j"]
+[ext_resource type="Script" uid="uid://baxdprh2d0157" path="res://data/level.gd" id="5_j5wjh"]
+[ext_resource type="Script" uid="uid://bk3pnh8dft28o" path="res://data/message.gd" id="6_vef74"]
 [ext_resource type="PackedScene" uid="uid://brkykgsr08ltf" path="res://data/characters/scenes/pieter_teal.tscn" id="8_j5wjh"]
+[ext_resource type="Script" uid="uid://qllqgdagxuda" path="res://scripts/agenda.gd" id="8_vef74"]
 
 [sub_resource type="FontVariation" id="FontVariation_7jktm"]
 base_font = ExtResource("1_7jktm")
@@ -55,7 +59,7 @@ draw_center = false
 base_font = ExtResource("1_7jktm")
 variation_opentype = {
 1196572996: 0,
-1380929092: 0,
+1380929092: 100,
 1869640570: 12,
 1936486004: 0,
 2003072104: 80,
@@ -121,16 +125,129 @@ Label/font_sizes/font_size = 11
 Label/styles/normal = SubResource("StyleBoxEmpty_j5wjh")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_51tvd"]
+content_margin_left = 12.0
+content_margin_right = 17.0
+content_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_boyg6"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 8.0
+expand_margin_right = 13.0
+
+[sub_resource type="FontVariation" id="FontVariation_mfdv2"]
+base_font = ExtResource("2_feb5d")
+variation_opentype = {
+1196572996: 0,
+1380929092: 0,
+1869640570: 36,
+1936486004: 0,
+2003072104: 151,
+2003265652: 350
+}
+spacing_glyph = -1
+spacing_top = -1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_215e1"]
+content_margin_left = 7.0
+content_margin_top = 5.0
+content_margin_right = 7.0
+content_margin_bottom = 5.0
+bg_color = Color(0.16862746, 0.1764706, 0.21176471, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lc2xo"]
+content_margin_left = 7.0
+content_margin_top = 5.0
+content_margin_right = 7.0
+content_margin_bottom = 5.0
+bg_color = Color(0.09411765, 0.101960786, 0.12156863, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="FontVariation" id="FontVariation_hve3p"]
+base_font = ExtResource("1_7jktm")
+variation_opentype = {
+1196572996: 0,
+1380929092: 100,
+1869640570: 16,
+1936486004: 0,
+2003072104: 85,
+2003265652: 400
+}
 
 [sub_resource type="Theme" id="Theme_ryrav"]
-default_font_size = 11
+default_font = SubResource("FontVariation_hve3p")
+default_font_size = 12
+Button/styles/hover = SubResource("StyleBoxFlat_215e1")
+Button/styles/normal = SubResource("StyleBoxFlat_lc2xo")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gu8e"]
 content_margin_left = 10.0
 content_margin_top = 5.0
-content_margin_right = 10.0
+content_margin_right = 5.0
 content_margin_bottom = 5.0
 bg_color = Color(0.09411765, 0.101960786, 0.12156863, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7sc4i"]
+content_margin_top = 1.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8heu"]
+content_margin_top = 1.0
+bg_color = Color(0.09411765, 0.101960786, 0.12156863, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_80cx4"]
+content_margin_top = 1.0
+bg_color = Color(0.65181077, 0.67798406, 0.7879121, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rvswv"]
+content_margin_top = 1.0
+bg_color = Color(0.09411765, 0.101960786, 0.12156863, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 6.0
 
 [sub_resource type="FontVariation" id="FontVariation_eow3j"]
 base_font = ExtResource("1_7jktm")
@@ -151,7 +268,7 @@ base_font = ExtResource("1_7jktm")
 variation_opentype = {
 1196572996: 0,
 1380929092: 0,
-1869640570: 48,
+1869640570: 120,
 1936486004: 0,
 2003072104: 100,
 2003265652: 500
@@ -159,7 +276,7 @@ variation_opentype = {
 
 [sub_resource type="LabelSettings" id="LabelSettings_j5wjh"]
 font = SubResource("FontVariation_vef74")
-font_size = 24
+font_size = 20
 
 [node name="Game" type="Control" unique_id=1381626058]
 oversampling_with_scale = 2
@@ -174,13 +291,28 @@ script = ExtResource("1_fc0e3")
 
 [node name="Background" parent="." unique_id=2011888884 instance=ExtResource("3_eow3j")]
 
+[node name="PanelContainer2" parent="Background" index="9" unique_id=887562531]
+clip_contents = false
+offset_left = 247.0
+offset_top = 4.0
+offset_right = 900.0
+offset_bottom = 36.0
+
 [node name="Levels" type="Node" parent="." unique_id=1222017038]
 
 [node name="Level0" parent="Levels" unique_id=497558949 instance=ExtResource("4_j5wjh")]
 
-[node name="Level1" parent="Levels" unique_id=797938535 instance=ExtResource("4_j5wjh")]
-completion_threshold = 1
-chat_name = "Untitled chat1"
+[node name="Gran" type="Node" parent="Levels" unique_id=1181650845]
+script = ExtResource("5_j5wjh")
+chat_name = "Service confuses"
+user = ExtResource("5_eow3j")
+agenda_message = "affirm blurbleai service usefulness"
+metadata/_custom_type_script = "uid://baxdprh2d0157"
+
+[node name="Message" type="Node" parent="Levels/Gran" unique_id=1148114906]
+script = ExtResource("6_vef74")
+text_content = "hello .  My grandson said i can ask questions here .  I hace one question please .  "
+metadata/_custom_type_script = "uid://bk3pnh8dft28o"
 
 [node name="UserPortrait" type="Control" parent="." unique_id=1808068258]
 layout_mode = 1
@@ -213,9 +345,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -37.0
-offset_top = -19.0
+offset_left = -32.0
+offset_top = -17.0
 grow_horizontal = 0
+theme_override_font_sizes/font_size = 8
 text = "User"
 horizontal_alignment = 2
 vertical_alignment = 1
@@ -289,74 +422,95 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 12
+theme_override_constants/separation = 0
 
 [node name="ChatDrawer" type="PanelContainer" parent="HBoxContainer" unique_id=55446842]
 custom_minimum_size = Vector2(234.035, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_eow3j")
 
-[node name="Levels" type="VBoxContainer" parent="HBoxContainer/ChatDrawer" unique_id=1637783851]
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/ChatDrawer" unique_id=1258824342]
+clip_contents = false
 layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="Levels" type="VBoxContainer" parent="HBoxContainer/ChatDrawer/ScrollContainer" unique_id=1637783851]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme = SubResource("Theme_j5wjh")
 theme_override_constants/separation = 4
 
-[node name="ButtonTemplate" type="Button" parent="HBoxContainer/ChatDrawer/Levels" unique_id=561149323]
+[node name="ButtonTemplate" type="Button" parent="HBoxContainer/ChatDrawer/ScrollContainer/Levels" unique_id=561149323]
 visible = false
 layout_mode = 2
+mouse_default_cursor_shape = 2
 toggle_mode = true
+button_pressed = true
 text = "Untitled chat"
 alignment = 0
 text_overrun_behavior = 5
 clip_text = true
 
-[node name="Separator" type="Label" parent="HBoxContainer/ChatDrawer/Levels" unique_id=281592190]
+[node name="Separator" type="Label" parent="HBoxContainer/ChatDrawer/ScrollContainer/Levels" unique_id=281592190]
 layout_mode = 2
 text = "Awaiting response"
 
-[node name="AwaitingResponse" type="VBoxContainer" parent="HBoxContainer/ChatDrawer/Levels" unique_id=64439828]
+[node name="AwaitingResponse" type="VBoxContainer" parent="HBoxContainer/ChatDrawer/ScrollContainer/Levels" unique_id=64439828]
 layout_mode = 2
 theme_override_constants/separation = 4
 
-[node name="Button3" type="Button" parent="HBoxContainer/ChatDrawer/Levels/AwaitingResponse" unique_id=1663459971]
-layout_mode = 2
-text = "Untitled chat"
-alignment = 0
-text_overrun_behavior = 5
-clip_text = true
-
-[node name="Separator2" type="Label" parent="HBoxContainer/ChatDrawer/Levels" unique_id=46499927]
+[node name="Separator2" type="Label" parent="HBoxContainer/ChatDrawer/ScrollContainer/Levels" unique_id=46499927]
 layout_mode = 2
 text = "Idle"
 
-[node name="Idle" type="VBoxContainer" parent="HBoxContainer/ChatDrawer/Levels" unique_id=819799977]
+[node name="Idle" type="VBoxContainer" parent="HBoxContainer/ChatDrawer/ScrollContainer/Levels" unique_id=819799977]
 layout_mode = 2
 theme_override_constants/separation = 4
 
-[node name="Button2" type="Button" parent="HBoxContainer/ChatDrawer/Levels/Idle" unique_id=565987315]
-layout_mode = 2
-toggle_mode = true
-text = "Untitled chat"
-alignment = 0
-text_overrun_behavior = 5
-clip_text = true
-
-[node name="Button3" type="Button" parent="HBoxContainer/ChatDrawer/Levels/Idle" unique_id=333416056]
-layout_mode = 2
-text = "Untitled chat"
-alignment = 0
-text_overrun_behavior = 5
-clip_text = true
-
 [node name="MainChatArea" type="PanelContainer" parent="HBoxContainer" unique_id=343520999]
-custom_minimum_size = Vector2(650, 0)
+custom_minimum_size = Vector2(682, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_51tvd")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MainChatArea" unique_id=1337024659]
 layout_mode = 2
 theme_override_constants/separation = 4
-alignment = 2
+
+[node name="Control" type="Control" parent="HBoxContainer/MainChatArea/VBoxContainer" unique_id=1156511086]
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer/MainChatArea/VBoxContainer" unique_id=708235852]
+custom_minimum_size = Vector2(36, 32)
+custom_maximum_size = Vector2(653, -1)
+propagate_maximum_size = false
+clip_contents = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_boyg6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MainChatArea/VBoxContainer/PanelContainer2" unique_id=1819463926]
+layout_mode = 2
+theme_override_constants/separation = 24
+script = ExtResource("8_vef74")
+
+[node name="Agenda" type="Label" parent="HBoxContainer/MainChatArea/VBoxContainer/PanelContainer2/HBoxContainer" unique_id=693140239]
+layout_mode = 2
+offset_transform_position = Vector2(567.9289, 0)
+theme_override_fonts/font = SubResource("FontVariation_mfdv2")
+theme_override_font_sizes/font_size = 20
+text = "agenda: lorem ipsum dolor sit amet"
+uppercase = true
+
+[node name="Control3" type="Control" parent="HBoxContainer/MainChatArea/VBoxContainer" unique_id=820845417]
+layout_mode = 2
+
+[node name="Messages" type="VBoxContainer" parent="HBoxContainer/MainChatArea/VBoxContainer" unique_id=2136828967]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="HBoxContainer/MainChatArea/VBoxContainer" unique_id=532928327]
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="Buttons" type="HFlowContainer" parent="HBoxContainer/MainChatArea/VBoxContainer" unique_id=822439315]
 layout_mode = 2
@@ -366,9 +520,13 @@ theme = SubResource("Theme_ryrav")
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4gu8e")
 
-[node name="TextInput" type="RichTextLabel" parent="HBoxContainer/MainChatArea/VBoxContainer/PanelContainer" unique_id=994780454]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MainChatArea/VBoxContainer/PanelContainer" unique_id=483396241]
+layout_mode = 2
+
+[node name="TextInput" type="RichTextLabel" parent="HBoxContainer/MainChatArea/VBoxContainer/PanelContainer/HBoxContainer" unique_id=994780454]
 custom_maximum_size = Vector2(-1, 72)
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_font_sizes/normal_font_size = 14
 bbcode_enabled = true
 text = "[color=#808080]Reply as BurbleAI...[/color]"
@@ -376,27 +534,37 @@ fit_content = true
 scroll_following = true
 meta_underlined = false
 
+[node name="SendButton" type="Button" parent="HBoxContainer/MainChatArea/VBoxContainer/PanelContainer/HBoxContainer" unique_id=352753825]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.09411765, 0.101960786, 0.12156863, 1)
+theme_override_colors/font_pressed_color = Color(0.65181077, 0.67798406, 0.7879121, 1)
+theme_override_colors/font_hover_color = Color(0.09411765, 0.101960786, 0.12156863, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_7sc4i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_e8heu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_80cx4")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_rvswv")
+disabled = true
+text = "Send"
+
 [node name="Label" type="Label" parent="HBoxContainer/MainChatArea/VBoxContainer" unique_id=1673247712]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "DEBUG"
-
-[node name="Control" type="Control" parent="HBoxContainer/MainChatArea/VBoxContainer" unique_id=515433297]
-visible = false
-custom_minimum_size = Vector2(0, 41.515)
-layout_mode = 2
 
 [node name="EmptyLabel" type="Label" parent="HBoxContainer/MainChatArea" unique_id=1385647600]
 visible = false
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_eow3j")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_215e1")
-text = "BurbleAI"
+text = "BurbleAI Customer Servicing Portal"
 label_settings = SubResource("LabelSettings_j5wjh")
 horizontal_alignment = 1
 
 [node name="CTA" type="Label" parent="HBoxContainer/MainChatArea/EmptyLabel" unique_id=1133003976]
-custom_minimum_size = Vector2(0, 91.43)
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -409,7 +577,7 @@ offset_right = 92.5
 offset_bottom = 10.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.47538632, 0.4937001, 0.5752797, 1)
+theme_override_colors/font_color = Color(0.4745098, 0.49411765, 0.5764706, 1)
 theme_override_fonts/font = SubResource("FontVariation_j5wjh")
 theme_override_font_sizes/font_size = 11
 text = "Select a chat on the left to get started"
@@ -418,4 +586,7 @@ text = "Select a chat on the left to get started"
 wait_time = 3.0
 one_shot = true
 
+[connection signal="pressed" from="HBoxContainer/MainChatArea/VBoxContainer/PanelContainer/HBoxContainer/SendButton" to="." method="_on_send_button_pressed"]
 [connection signal="timeout" from="QsBufferClearTimer" to="." method="_on_qs_buffer_clear_timeout"]
+
+[editable path="Background"]

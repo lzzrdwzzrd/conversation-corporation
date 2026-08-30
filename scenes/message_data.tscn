@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://crs07133xthwa"]
+
+[ext_resource type="Script" uid="uid://bk3pnh8dft28o" path="res://data/message.gd" id="1_27s3b"]
+
+[node name="MessageData" type="Node" unique_id=1343398138]
+script = ExtResource("1_27s3b")
+metadata/_custom_type_script = "uid://bk3pnh8dft28o"

@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://blo88av83s2hf"]
+
+[ext_resource type="Texture2D" uid="uid://t5cajo3252dw" path="res://assets/ui/message.svg" id="1_11qlq"]
+[ext_resource type="Shader" uid="uid://cp3ykn8xq8yae" path="res://shaders/message.gdshader" id="1_x5w8s"]
+[ext_resource type="FontFile" uid="uid://dhvmtnlc8oiiy" path="res://fonts/GoogleSansFlex.ttf" id="1_yad0m"]
+
+[sub_resource type="FontVariation" id="FontVariation_ac8o6"]
+base_font = ExtResource("1_yad0m")
+variation_opentype = {
+1196572996: 0,
+1380929092: 100,
+1869640570: 12,
+1936486004: 0,
+2003072104: 85,
+2003265652: 400
+}
+
+[sub_resource type="Theme" id="Theme_44k0g"]
+default_font = SubResource("FontVariation_ac8o6")
+default_font_size = 11
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yad0m"]
+content_margin_left = 10.0
+content_margin_top = 9.0
+content_margin_right = 10.0
+content_margin_bottom = 30.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_11qlq"]
+shader = ExtResource("1_x5w8s")
+
+[node name="MessageText" type="Label" unique_id=387421928]
+custom_minimum_size = Vector2(86, 53)
+offset_right = 86.0
+offset_bottom = 53.0
+theme = SubResource("Theme_44k0g")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yad0m")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1994644102]
+self_modulate = Color(0.12156863, 0.12941177, 0.15686275, 1)
+show_behind_parent = true
+material = SubResource("ShaderMaterial_11qlq")
+use_parent_material = true
+custom_minimum_size = Vector2(86, 54)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(-1, 1)
+texture = ExtResource("1_11qlq")
+patch_margin_left = 74
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 42
+
+[node name="AuthorLeft" type="Label" parent="." unique_id=93555859]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -22.0
+offset_right = 27.0
+offset_bottom = -10.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.4745098, 0.49411765, 0.5764706, 1)
+theme_override_font_sizes/font_size = 8
+text = "User"
+
+[node name="AuthorRight" type="Label" parent="." unique_id=1947789426]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -27.0
+offset_top = -22.0
+offset_right = -8.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.4745098, 0.49411765, 0.5764706, 1)
+theme_override_font_sizes/font_size = 8
+text = "BurbleAI"
+horizontal_alignment = 2

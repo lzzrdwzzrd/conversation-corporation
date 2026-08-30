@@ -7,6 +7,14 @@ extends Node
 @export var is_urgent : bool = false
 @export var user : PackedScene
 @export var vocabulary_biases : Array[String] = []
+@export var agenda_message : String
+@export var desired_sentiment = [
+	{
+		topic = "",
+		target = "pos", # or neg
+		score_mult = 1.0 # how much the resulting sentiment score should be multiplied by
+	}
+]
 
 var draft : Array[Dictionary] = [{ word = "", pos = "start", tags = [], flags = {} }]
 var options : Array[Dictionary] = []

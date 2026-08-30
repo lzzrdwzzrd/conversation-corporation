@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfxsy2e1w2476"
-path="res://.godot/imported/teal_featuresheet.png-cf80b45cc5c89e4d96bd8e27a10e4454.ctex"
+path="res://.godot/imported/teal_featuresheet.png-2e9ae62b445edc371f95740a974148ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Teal/teal_featuresheet.png"
-dest_files=["res://.godot/imported/teal_featuresheet.png-cf80b45cc5c89e4d96bd8e27a10e4454.ctex"]
+source_file="res://assets/teal/teal_featuresheet.png"
+dest_files=["res://.godot/imported/teal_featuresheet.png-2e9ae62b445edc371f95740a974148ea.ctex"]
 
 [params]
 
