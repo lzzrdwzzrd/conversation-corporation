@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cxsook6kwmbn"]
 
 [ext_resource type="PackedScene" uid="uid://cosiljv6epx1" path="res://data/character_portrait.tscn" id="1_4822n"]
-[ext_resource type="Script" uid="uid://v2kfj3j4wufo" path="res://data/characters/scripts/pieter_teal.gd" id="2_1smqt"]
 [ext_resource type="Texture2D" uid="uid://j8f21pv2lfdo" path="res://assets/guru/guru_bg.png" id="3_4822n"]
 [ext_resource type="Shader" uid="uid://cmhj1spw5tq7p" path="res://shaders/portraits.gdshader" id="3_bhxhd"]
 [ext_resource type="Texture2D" uid="uid://ccywgiit2nwv8" path="res://assets/guru/guru_blank.png" id="4_1smqt"]
@@ -11,7 +10,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tj6w4"]
 shader = ExtResource("3_bhxhd")
-shader_parameter/washout_intensity = 0.0
+shader_parameter/washout_intensity = 0.1
 shader_parameter/blur_amount = 0.2
 shader_parameter/blockiness = 270.0
 shader_parameter/color_steps = 14.0
@@ -23,7 +22,7 @@ shader = ExtResource("7_tj6w4")
 shader_parameter/shift_amount = 196.0
 
 [node name="Guru" unique_id=1095612352 instance=ExtResource("1_4822n")]
-script = ExtResource("2_1smqt")
+script = null
 
 [node name="SubViewportContainer" parent="." index="0" unique_id=68375400]
 material = SubResource("ShaderMaterial_tj6w4")

@@ -1,12 +1,10 @@
 [gd_scene format=3 uid="uid://kygar0sbpf3o"]
 
 [ext_resource type="FontFile" uid="uid://dhvmtnlc8oiiy" path="res://fonts/GoogleSansFlex.ttf" id="1_7jktm"]
-[ext_resource type="Shader" uid="uid://cmhj1spw5tq7p" path="res://shaders/portraits.gdshader" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://ctmrmkigd737b" path="res://scripts/game.gd" id="1_fc0e3"]
 [ext_resource type="FontFile" uid="uid://uxbxo10p6xe6" path="res://fonts/IntelOneMono.ttf" id="2_feb5d"]
 [ext_resource type="PackedScene" uid="uid://dpkmlrwhi3n18" path="res://assets/ui_background.tscn" id="3_eow3j"]
 [ext_resource type="PackedScene" uid="uid://2tvo7037aw3o" path="res://data/levels/level0-test.tscn" id="4_j5wjh"]
-[ext_resource type="Texture2D" uid="uid://clrem4y8mdb8f" path="res://assets/trader_test.png" id="5_7jktm"]
 [ext_resource type="PackedScene" uid="uid://brkykgsr08ltf" path="res://data/characters/scenes/pieter_teal.tscn" id="8_j5wjh"]
 
 [sub_resource type="FontVariation" id="FontVariation_7jktm"]
@@ -23,17 +21,11 @@ variation_opentype = {
 [sub_resource type="Theme" id="Theme_fc0e3"]
 default_font = SubResource("FontVariation_7jktm")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ryrav"]
-shader = ExtResource("1_e2o6t")
-shader_parameter/washout_intensity = 0.0
-shader_parameter/blur_amount = 0.874000041515
-shader_parameter/blockiness = 258.83300991956753
-shader_parameter/color_steps = 10.7690001315275
-shader_parameter/grain_amount = 0.10000000149012
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iotsf"]
-content_margin_left = 5.0
-content_margin_right = 5.0
+content_margin_left = 6.0
+content_margin_top = 2.0
+content_margin_right = 6.0
+content_margin_bottom = 3.0
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="FontVariation" id="FontVariation_lc2xo"]
@@ -46,6 +38,11 @@ variation_opentype = {
 default_font = SubResource("FontVariation_lc2xo")
 default_font_size = 10
 Label/styles/normal = SubResource("StyleBoxFlat_iotsf")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_51tvd"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ryrav"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eow3j"]
 content_margin_left = 4.0
@@ -64,6 +61,16 @@ variation_opentype = {
 2003072104: 80,
 2003265652: 400
 }
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vef74"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(0.16862746, 0.1764706, 0.21176471, 1)
+corner_radius_top_left = 3
+corner_radius_bottom_left = 3
+expand_margin_right = 5.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hve3p"]
 content_margin_left = 10.0
@@ -97,23 +104,15 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vef74"]
-content_margin_left = 10.0
-content_margin_top = 5.0
-content_margin_right = 10.0
-content_margin_bottom = 5.0
-bg_color = Color(0.16862746, 0.1764706, 0.21176471, 1)
-corner_radius_top_left = 3
-corner_radius_bottom_left = 3
-expand_margin_right = 5.0
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j5wjh"]
 content_margin_left = 5.0
 content_margin_top = 2.0
 
 [sub_resource type="Theme" id="Theme_j5wjh"]
 default_font_size = 9
+Button/colors/font_disabled_color = Color(1, 1, 1, 1)
 Button/fonts/font = SubResource("FontVariation_j5wjh")
+Button/styles/disabled = SubResource("StyleBoxFlat_vef74")
 Button/styles/hover = SubResource("StyleBoxFlat_hve3p")
 Button/styles/hover_pressed = SubResource("StyleBoxFlat_mfdv2")
 Button/styles/normal = SubResource("StyleBoxFlat_j5wjh")
@@ -133,6 +132,35 @@ content_margin_right = 10.0
 content_margin_bottom = 5.0
 bg_color = Color(0.09411765, 0.101960786, 0.12156863, 1)
 
+[sub_resource type="FontVariation" id="FontVariation_eow3j"]
+base_font = ExtResource("1_7jktm")
+variation_opentype = {
+1196572996: 0,
+1380929092: 0,
+1869640570: 36,
+1936486004: 0,
+2003072104: 100,
+2003265652: 500
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_215e1"]
+content_margin_bottom = 128.0
+
+[sub_resource type="FontVariation" id="FontVariation_vef74"]
+base_font = ExtResource("1_7jktm")
+variation_opentype = {
+1196572996: 0,
+1380929092: 0,
+1869640570: 48,
+1936486004: 0,
+2003072104: 100,
+2003265652: 500
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_j5wjh"]
+font = SubResource("FontVariation_vef74")
+font_size = 24
+
 [node name="Game" type="Control" unique_id=1381626058]
 oversampling_with_scale = 2
 layout_mode = 3
@@ -150,8 +178,11 @@ script = ExtResource("1_fc0e3")
 
 [node name="Level0" parent="Levels" unique_id=497558949 instance=ExtResource("4_j5wjh")]
 
-[node name="CharacterPortrait" type="TextureRect" parent="." unique_id=1177734986]
-material = SubResource("ShaderMaterial_ryrav")
+[node name="Level1" parent="Levels" unique_id=797938535 instance=ExtResource("4_j5wjh")]
+completion_threshold = 1
+chat_name = "Untitled chat1"
+
+[node name="UserPortrait" type="Control" parent="." unique_id=1808068258]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -162,43 +193,67 @@ offset_right = -19.0
 offset_bottom = 168.0
 grow_horizontal = 0
 theme = SubResource("Theme_e2o6t")
-texture = ExtResource("5_7jktm")
-expand_mode = 3
-stretch_mode = 6
 
-[node name="NameLabel" type="Label" parent="CharacterPortrait" unique_id=20433795]
+[node name="NameLabel" type="Label" parent="UserPortrait" unique_id=20433795]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -11.0
-offset_bottom = 18.0
+offset_left = -31.0
+offset_bottom = 19.0
 grow_horizontal = 0
-grow_vertical = 0
-text = "Richard K. Price, 26"
+text = "N/A"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="CameraLabel" type="Label" parent="CharacterPortrait" unique_id=1453522122]
+[node name="CameraLabel" type="Label" parent="UserPortrait" unique_id=1453522122]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -11.0
-offset_top = -18.0
+offset_left = -37.0
+offset_top = -19.0
 grow_horizontal = 0
-text = "User (camera #0)"
+text = "User"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="PieterTeal" parent="." unique_id=1095612352 instance=ExtResource("8_j5wjh")]
+[node name="Panel" type="Panel" parent="UserPortrait" unique_id=440574053]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_51tvd")
+
+[node name="Label" type="Label" parent="UserPortrait/Panel" unique_id=1704460307]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.5
+offset_top = -9.5
+offset_right = 6.5
+offset_bottom = 9.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.4, 0.4, 0.4, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ryrav")
+text = "NO VIDEO"
+horizontal_alignment = 1
+
+[node name="PieterTeal" parent="." unique_id=1236057432 instance=ExtResource("8_j5wjh")]
 layout_mode = 0
 offset_left = 937.0
 offset_top = 232.0
 offset_right = 1133.0
 offset_bottom = 360.0
+theme = SubResource("Theme_e2o6t")
 
 [node name="NameLabel" type="Label" parent="PieterTeal" unique_id=181020547]
 layout_mode = 1
@@ -207,8 +262,8 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -127.0
-offset_bottom = 21.0
+offset_left = -129.0
+offset_bottom = 19.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Pieter B. Teal, 152"
@@ -220,8 +275,8 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -196.0
-offset_top = -21.0
+offset_left = -166.0
+offset_top = -19.0
 grow_horizontal = 0
 text = "Founder & CEO of BurbleAI"
 horizontal_alignment = 2
@@ -330,6 +385,34 @@ text = "DEBUG"
 visible = false
 custom_minimum_size = Vector2(0, 41.515)
 layout_mode = 2
+
+[node name="EmptyLabel" type="Label" parent="HBoxContainer/MainChatArea" unique_id=1385647600]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_eow3j")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_215e1")
+text = "BurbleAI"
+label_settings = SubResource("LabelSettings_j5wjh")
+horizontal_alignment = 1
+
+[node name="CTA" type="Label" parent="HBoxContainer/MainChatArea/EmptyLabel" unique_id=1133003976]
+custom_minimum_size = Vector2(0, 91.43)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.5
+offset_top = -10.5
+offset_right = 92.5
+offset_bottom = 10.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.47538632, 0.4937001, 0.5752797, 1)
+theme_override_fonts/font = SubResource("FontVariation_j5wjh")
+theme_override_font_sizes/font_size = 11
+text = "Select a chat on the left to get started"
 
 [node name="QsBufferClearTimer" type="Timer" parent="." unique_id=1341630499]
 wait_time = 3.0

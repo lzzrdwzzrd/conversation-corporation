@@ -7,8 +7,10 @@ extends Control
 @onready var qs_buffer_clear_timer: Timer = $QsBufferClearTimer
 @onready var pending_chats: VBoxContainer = $HBoxContainer/ChatDrawer/Levels/AwaitingResponse # if !level.get_child(-1).is_from_player
 @onready var idle_chats: VBoxContainer = $HBoxContainer/ChatDrawer/Levels/Idle
-@onready var button_template: Button = $HBoxContainer/ChatDrawer/Levels/ButtonTemplate
+@onready var button_template: Button = $HBoxContainer/ChatDrawer/Levels/ButtonTemplate # duplicate this into pending_chats and idle_chats whenever needed
 @onready var levels: Node = $Levels
+@onready var main_vbox: VBoxContainer = $HBoxContainer/MainChatArea/VBoxContainer
+@onready var empty_label: Label = $HBoxContainer/MainChatArea/EmptyLabel
 
 var current_message : Array[Dictionary] = [
 	{ word = "", pos = "start", tags = [], flags = {} }
@@ -18,10 +20,16 @@ var active_level : Node
 var current_options : Array[Dictionary] = []
 var quick_select_buffer : String
 var backspaces_available := 3
+var is_input_locked := false
+
+var levels_completed := 0
 
 func _ready() -> void:
-	_generate_options()
-	_render_message(current_message)
+	if levels.get_child_count():
+		_on_level_selected(levels.get_child(0))
+	else:
+		_generate_options()
+		_render_message(current_message)
 
 func capitalize(word: String) -> String:
 	var trimmed : String = word.strip_edges()
@@ -192,6 +200,54 @@ func _try_focusing_first_option(match: String) -> bool:
 			return true
 
 	return false
+
+func _set_level_buttons() -> void:
+	for child in pending_chats.get_children():
+		child.queue_free()
+	for child in idle_chats.get_children():
+		child.queue_free()
+
+	for level in levels.get_children():
+		if level.completion_threshold > levels_completed:
+			continue
+
+		var button : Button = button_template.duplicate()
+		button.text = level.chat_name
+		button.button_pressed = level.chat_name == active_level.chat_name
+		button.disabled = button.button_pressed
+
+		if level.is_pending():
+			pending_chats.add_child(button)
+		else:
+			idle_chats.add_child(button)
+
+		button.show()
+
+		if !button.button_pressed:
+			button.pressed.connect(_on_level_selected.bind(level))
+
+	pending_chats.visible = pending_chats.get_child_count() > 0
+	idle_chats.visible = idle_chats.get_child_count() > 0
+
+func _on_level_selected(level: Node) -> void:
+	if active_level and active_level.chat_name == level.chat_name:
+		return
+
+	active_level = level
+	current_message = level.draft.duplicate()
+	current_options = level.options.duplicate()
+	context_start = level.context_start
+	backspaces_available = level.backspaces_available
+	is_input_locked = !level.is_pending()
+
+	if !is_input_locked:
+		_render_message(current_message)
+		if !current_options.size():
+			_generate_options()
+		else:
+			_set_option_buttons(current_options)
+
+	_set_level_buttons()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:

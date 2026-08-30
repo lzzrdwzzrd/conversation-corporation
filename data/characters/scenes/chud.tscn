@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dqrdl4sjf1245"]
 
 [ext_resource type="PackedScene" uid="uid://cosiljv6epx1" path="res://data/character_portrait.tscn" id="1_goub1"]
-[ext_resource type="Script" uid="uid://v2kfj3j4wufo" path="res://data/characters/scripts/pieter_teal.gd" id="2_r3sqf"]
 [ext_resource type="Shader" uid="uid://cmhj1spw5tq7p" path="res://shaders/portraits.gdshader" id="3_r3sqf"]
 [ext_resource type="Texture2D" uid="uid://cuktfh856ki4m" path="res://assets/chud/chug_bg.png" id="3_uqd5o"]
 [ext_resource type="Texture2D" uid="uid://dktxveewifevf" path="res://assets/chud/chud_blank.png" id="4_sbqqi"]
@@ -10,7 +9,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uqd5o"]
 shader = ExtResource("3_r3sqf")
-shader_parameter/washout_intensity = 0.2
+shader_parameter/washout_intensity = 0.1
 shader_parameter/blur_amount = 0.5
 shader_parameter/blockiness = 200.0
 shader_parameter/color_steps = 13.0
@@ -18,7 +17,7 @@ shader_parameter/grain_amount = 0.08
 shader_parameter/frame_rate = 20.0
 
 [node name="Chud" unique_id=1095612352 instance=ExtResource("1_goub1")]
-script = ExtResource("2_r3sqf")
+script = null
 
 [node name="SubViewportContainer" parent="." index="0" unique_id=68375400]
 material = SubResource("ShaderMaterial_uqd5o")

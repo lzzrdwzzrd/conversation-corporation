@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://d3gy4lh1nd0qy"]
 
 [ext_resource type="PackedScene" uid="uid://cosiljv6epx1" path="res://data/character_portrait.tscn" id="1_6nlg1"]
-[ext_resource type="Script" uid="uid://v2kfj3j4wufo" path="res://data/characters/scripts/pieter_teal.gd" id="2_vrxue"]
 [ext_resource type="Texture2D" uid="uid://b5qa5dng01mqe" path="res://assets/trader/trader_bg.png" id="3_p3udm"]
 [ext_resource type="Texture2D" uid="uid://cek20phpm5qim" path="res://assets/trader/trader_blank.png" id="4_hwwe2"]
 [ext_resource type="Texture2D" uid="uid://cqktm0bfeeox6" path="res://assets/trader/trader_featuresheet.png" id="5_vl6p2"]
@@ -18,7 +17,7 @@ shader_parameter/grain_amount = 0.10000000149012
 shader_parameter/frame_rate = 20.0
 
 [node name="Trader" unique_id=1095612352 instance=ExtResource("1_6nlg1")]
-script = ExtResource("2_vrxue")
+script = null
 
 [node name="SubViewportContainer" parent="." index="0" unique_id=68375400]
 material = SubResource("ShaderMaterial_hwwe2")
@@ -44,7 +43,7 @@ stretch_mode = 6
 
 [node name="Businessman" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background" index="0" unique_id=1503015403]
 position = Vector2(98, 61.000004)
-scale = Vector2(0.32761917, 0.32761917)
+scale = Vector2(0.32761917, 0.3366667)
 texture = ExtResource("4_hwwe2")
 
 [node name="EyebrowRight" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Businessman" index="0" unique_id=722849891]
@@ -88,5 +87,5 @@ frame = 6
 
 [node name="BusinessmanGlasses" type="Sprite2D" parent="SubViewportContainer/SubViewport/Background/Businessman" index="5" unique_id=2122620446]
 position = Vector2(-1.4305115e-06, 3.0517578e-05)
-scale = Vector2(1.0742514, 0.98666656)
+scale = Vector2(0.9809694, 0.9009899)
 texture = ExtResource("6_muxud")
